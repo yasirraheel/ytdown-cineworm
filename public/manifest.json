@@ -1,6 +1,6 @@
 {
   "background_color": "#ffffff",
-  "description": "VidSnap \u2014 Free Online Video Downloader",
+  "description": "YTDowN \u2014 Free Online Video Downloader",
   "display": "standalone",
   "icons": [
     {
@@ -16,9 +16,9 @@
       "type": "image/png"
     }
   ],
-  "name": "VidSnap",
+  "name": "YTDowN",
   "scope": "/",
-  "short_name": "VidSnap",
+  "short_name": "YTDowN",
   "start_url": "/",
   "theme_color": "#84bd07"
 }

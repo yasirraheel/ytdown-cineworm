@@ -19,23 +19,23 @@
     '@keyframes sd-pulse{0%,100%{opacity:1}50%{opacity:.55}}' +
     '.sd-card h3{font-size:20px;line-height:1.4;margin:0 0 6px;color:#222}' +
     '.sd-meta{font-size:14px;color:#777;margin:0 0 14px}' +
-    '.sd-q{display:inline-block;margin:5px;padding:11px 20px;cursor:pointer;border:none;border-radius:8px;background:#84bd07;color:#fff;font-size:15px;font-weight:700}' +
+    '.sd-q{display:inline-block;margin:5px;padding:11px 20px;cursor:pointer;border:none;border-radius:8px;background:var(--brand);color:#fff;font-size:15px;font-weight:700}' +
     '.sd-q:hover{background:#74a806}' +
-    '.sd-mp3{display:inline-block;margin:5px;padding:11px 20px;cursor:pointer;border:2px solid #84bd07;border-radius:8px;background:#fff;color:#5a7d05;font-size:15px;font-weight:700}' +
+    '.sd-mp3{display:inline-block;margin:5px;padding:11px 20px;cursor:pointer;border:2px solid var(--brand);border-radius:8px;background:#fff;color:var(--brand-dark);font-size:15px;font-weight:700}' +
     '.sd-status{margin:16px auto;padding:0;border:0;border-radius:0;background:none;display:flex;align-items:center;justify-content:center;gap:12px;font-size:15px;color:#2f4d0a;text-align:left}' +
     '.sd-error{margin:16px auto;padding:16px 18px;border:1px solid #f5c2c7;border-left:5px solid #dc3545;border-radius:10px;background:#fff5f5;text-align:left}' +
-    '.sd-spin{width:26px;height:26px;min-width:26px;border:3px solid #d9e8d9;border-top-color:#84bd07;border-radius:50%;animation:sd-rot 1s linear infinite}' +
+    '.sd-spin{width:26px;height:26px;min-width:26px;border:3px solid #d9e8d9;border-top-color:var(--brand);border-radius:50%;animation:sd-rot 1s linear infinite}' +
     '@keyframes sd-rot{to{transform:rotate(360deg)}}' +
     '.sd-cancel{display:inline-block;margin:5px;padding:10px 18px;cursor:pointer;border:2px solid #dc3545;border-radius:8px;background:#fff;color:#b02a37;font-size:14px;font-weight:700}' +
     '.faq_item_title{cursor:pointer}' +
-    '.sd-dl{display:inline-block;margin-top:10px;padding:13px 26px;background:#84bd07;color:#fff!important;border-radius:8px;font-weight:700;font-size:16px;text-decoration:none;max-width:100%;box-sizing:border-box;white-space:normal;overflow-wrap:anywhere;word-break:break-word;text-align:center;line-height:1.4}' +
+    '.sd-dl{display:inline-block;margin-top:10px;padding:13px 26px;background:var(--brand);color:#fff!important;border-radius:8px;font-weight:700;font-size:16px;text-decoration:none;max-width:100%;box-sizing:border-box;white-space:normal;overflow-wrap:anywhere;word-break:break-word;text-align:center;line-height:1.4}' +
     '@media (max-width:600px){.sd-card{padding:16px 12px;margin:14px auto}.sd-card h3{font-size:17px}.sd-card img{max-width:100%}.sd-q,.sd-mp3{padding:10px 13px;font-size:14px;margin:4px 3px}.sd-status{flex-wrap:wrap;justify-content:center;text-align:center}.sd-error{padding:14px}.sd-dl{padding:12px 16px;font-size:15px}}' +
     '.sd-cookie{position:fixed;left:0;right:0;bottom:0;z-index:9999;display:flex;justify-content:center;padding:12px;box-sizing:border-box;pointer-events:none}' +
     '.sd-cookie-in{pointer-events:auto;max-width:960px;width:100%;background:#fff;border:1px solid #e3e8e3;border-radius:14px;box-shadow:0 4px 24px rgba(0,0,0,.14);padding:14px 18px;display:flex;align-items:center;gap:14px;box-sizing:border-box}' +
     '.sd-cookie-t{flex:1;font-size:14px;line-height:1.5;color:#444;text-align:left}' +
     '.sd-cookie-t b{color:#222}' +
     '.sd-cookie-a{flex:0 0 auto;display:flex;gap:8px;align-items:center}' +
-    '.sd-cookie-ok{border:0;background:#84bd07;color:#fff;font-weight:700;font-size:14px;padding:10px 20px;border-radius:8px;cursor:pointer}' +
+    '.sd-cookie-ok{border:0;background:var(--brand);color:#fff;font-weight:700;font-size:14px;padding:10px 20px;border-radius:8px;cursor:pointer}' +
     '.sd-cookie-no{border:2px solid #e3e3e3;background:#fff;color:#555;font-weight:700;font-size:14px;padding:8px 16px;border-radius:8px;cursor:pointer}' +
     '@media (max-width:600px){.sd-cookie{padding:8px}.sd-cookie-in{flex-wrap:wrap;gap:10px;padding:12px 14px}.sd-cookie-t{font-size:13px;flex:1 1 100%}.sd-cookie-a{flex:1 1 100%;justify-content:flex-end}}';
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
@@ -306,13 +306,13 @@
   // Cookie consent: a small bottom banner, only for new visitors.
   // It never blocks the page and remembers the choice in this browser.
   try {
-    if (!localStorage.getItem('vidsnap_consent')) {
+    if (!localStorage.getItem('ytdown_consent')) {
       var cb = document.createElement('div');
       cb.className = 'sd-cookie';
-      cb.innerHTML = '<div class="sd-cookie-in"><div class="sd-cookie-t"><b>Your privacy matters.</b> VidSnap uses cookies and local storage only to remember your downloads and keep the site working smoothly. No tracking, no ads.</div><div class="sd-cookie-a"><button type="button" class="sd-cookie-no">Decline</button><button type="button" class="sd-cookie-ok">Accept</button></div></div>';
+      cb.innerHTML = '<div class="sd-cookie-in"><div class="sd-cookie-t"><b>Your privacy matters.</b> YTDowN uses cookies and local storage only to remember your downloads and keep the site working smoothly. No tracking, no ads.</div><div class="sd-cookie-a"><button type="button" class="sd-cookie-no">Decline</button><button type="button" class="sd-cookie-ok">Accept</button></div></div>';
       document.body.appendChild(cb);
-      cb.querySelector('.sd-cookie-ok').addEventListener('click', function () { try { localStorage.setItem('vidsnap_consent', 'accepted'); } catch (e) {} cb.remove(); });
-      cb.querySelector('.sd-cookie-no').addEventListener('click', function () { try { localStorage.setItem('vidsnap_consent', 'declined'); } catch (e) {} cb.remove(); });
+      cb.querySelector('.sd-cookie-ok').addEventListener('click', function () { try { localStorage.setItem('ytdown_consent', 'accepted'); } catch (e) {} cb.remove(); });
+      cb.querySelector('.sd-cookie-no').addEventListener('click', function () { try { localStorage.setItem('ytdown_consent', 'declined'); } catch (e) {} cb.remove(); });
     }
   } catch (e) {}
 })();

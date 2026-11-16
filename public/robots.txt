@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://vidsnap.online/sitemap.xml
+Sitemap: https://ytdown.cineworm.org/sitemap.xml

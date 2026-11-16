@@ -984,10 +984,10 @@ setInterval(() => {
 const server = http.createServer(async (req, res) => {
   try {
     const u = new URL(req.url, `http://${req.headers.host}`);
-    // www -> non-www (SEO: one canonical host; only vidsnap.online,
+    // www -> non-www (SEO: one canonical host; only ytdown.cineworm.org,
     // the downsub host keeps serving as-is).
-    if (req.headers.host === 'www.vidsnap.online') {
-      res.writeHead(301, { Location: 'https://vidsnap.online' + u.pathname + u.search }); res.end(); return;
+    if (req.headers.host === 'www.ytdown.cineworm.org') {
+      res.writeHead(301, { Location: 'https://ytdown.cineworm.org' + u.pathname + u.search }); res.end(); return;
     }
     if (req.method === 'GET' && (u.pathname === '/' || u.pathname === '/index.html')) {
       res.writeHead(200, { 'Content-Type': mime['.html'], 'Cache-Control': 'no-cache, must-revalidate' }); fs.createReadStream(path.join(publicDir, 'index.html')).pipe(res); return;

@@ -1,6 +1,6 @@
 Options -Indexes
 PassengerEnabled on
-PassengerAppRoot /home/u181781564/domains/hassanagro.com/public_html/downsub
+PassengerAppRoot /home/u273790872/domains/cineworm.org/public_html/ytdown
 PassengerBaseURI /
 PassengerAppType node
 PassengerStartupFile app.cjs

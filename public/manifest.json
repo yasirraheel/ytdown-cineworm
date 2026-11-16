@@ -1,6 +1,6 @@
 {
   "background_color": "#ffffff",
-  "description": "YTDowN \u2014 Free Online Video Downloader",
+  "description": "ClipDown \u2014 Free Online Video Downloader",
   "display": "standalone",
   "icons": [
     {
@@ -16,9 +16,9 @@
       "type": "image/png"
     }
   ],
-  "name": "YTDowN",
+  "name": "ClipDown",
   "scope": "/",
-  "short_name": "YTDowN",
+  "short_name": "ClipDown",
   "start_url": "/",
   "theme_color": "#84bd07"
 }

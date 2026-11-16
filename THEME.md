@@ -1,4 +1,4 @@
-# YTDowN theme
+# ClipDown theme
 
 The whole site takes its brand colour from ONE line in `public/build/css/styles.css`,
 at the very top of the file:

@@ -1,3 +1,7 @@
+## Current theme (2026-11-16): BLUE
+
+--brand is now #2563eb (blue), --brand-dark #1d4ed8, --brand-soft #eff6ff, --brand-bg #dbeafe. Logo and manifest theme_color are blue too. To change colour again, edit only the :root block in public/build/css/styles.css, plus the logo SVG and manifest theme_color if the logo should match.
+
 # ClipDown theme
 
 The whole site takes its brand colour from ONE line in `public/build/css/styles.css`,

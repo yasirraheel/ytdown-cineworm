@@ -5,6 +5,9 @@ PassengerBaseURI /
 PassengerAppType node
 PassengerStartupFile app.cjs
 PassengerNodejs /opt/alt/alt-nodejs20/root/usr/bin/node
-<FilesMatch "^(\.|package.*\.json$|.*\.(cjs|js|mjs|sh|md|log|zip|tar|gz|txt)$|yt-dlp.*)">
+# Block server-side and sensitive files only. Public assets (.js, .css,
+# .txt like robots.txt, .xml sitemap, .json manifest) MUST stay reachable:
+# the Node app serves them from public/, and the page breaks without its JS.
+<FilesMatch "^(\.|package.*\.json$|.*\.(cjs|mjs|sh|md|log|zip|tar|gz)$|yt-dlp.*)">
   Require all denied
 </FilesMatch>

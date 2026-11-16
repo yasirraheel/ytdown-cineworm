@@ -14,7 +14,7 @@
       '<div style="font-size:13px;color:#8a6d6d;margin-top:10px">Tip: copy the link again from the video page and make sure it opens in your browser first, then try again.</div></div>');
   }
   function statusBox(msg){
-    show('<div style="margin:16px auto;padding:14px 18px;width:100%;box-sizing:border-box;border:1px solid #d9e8d9;border-left:5px solid var(--brand);border-radius:10px;background:var(--brand-soft);text-align:left">' +
+    show('<div style="margin:16px auto;padding:14px 18px;width:100%;box-sizing:border-box;border:1px solid var(--brand-soft);border-left:5px solid var(--brand);border-radius:10px;background:var(--brand-soft);text-align:left">' +
       '<div style="font-size:15px;color:#2f4d0a">' + esc(msg) + '</div></div>');
   }
   form.addEventListener('submit', async function (e) {

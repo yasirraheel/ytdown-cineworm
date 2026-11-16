@@ -1,8 +1,8 @@
 :root{
   --brand:#2563eb;
-  --brand-dark:#1d4ed8;
-  --brand-soft:#eff6ff;
-  --brand-bg:#dbeafe;
+  --brand-dark:color-mix(in srgb, var(--brand) 82%, black);
+  --brand-soft:color-mix(in srgb, var(--brand) 8%, white);
+  --brand-bg:color-mix(in srgb, var(--brand) 14%, white);
 }
 article,
 aside,
@@ -866,9 +866,9 @@ html {
 
 .green-btn {
     color: #2d2e29;
-    background-color: #aad968;
-    background-image: -o-linear-gradient(top, #aad968, #98c531);
-    border: solid #697947;
+    background-color: var(--brand);
+    background-image: -o-linear-gradient(top, var(--brand), var(--brand));
+    border: solid var(--brand);
     border-width: 0 0 1px;
     border-radius: 4px;
     background-clip: padding-box;
@@ -887,16 +887,16 @@ html {
 
 .green-btn:hover {
     color: #3c3f18;
-    background-color: #b3dd76;
-    background-image: -o-linear-gradient(top, #b3dd76, #a3cf3f);
-    border-bottom-color: #788b51
+    background-color: var(--brand);
+    background-image: -o-linear-gradient(top, var(--brand), var(--brand));
+    border-bottom-color: var(--brand)
 }
 
 .green-btn:active {
     color: #2d2e29;
-    background-color: #98cb33;
-    background-image: -o-linear-gradient(top, #98cb33, #aad760);
-    border-bottom-color: #697947;
+    background-color: var(--brand);
+    background-image: -o-linear-gradient(top, var(--brand), var(--brand));
+    border-bottom-color: var(--brand);
     padding: 0 24px 0 26px;
     line-height: 39px;
     position: relative
@@ -936,7 +936,7 @@ html {
 
 .green-btn-3 {
     color: #fff;
-    background: #01a129;
+    background: var(--brand);
     border-radius: 0;
     display: inline-block;
     position: relative;
@@ -1846,7 +1846,7 @@ footer nav.f-nav .f-nav-column ul li .active {
 }
 
 .m-informer-content input.valid {
-    border-color: #00c000
+    border-color: var(--brand)
 }
 
 .m-informer-content input.error {
@@ -2277,7 +2277,7 @@ h6 .favicon {
 }
 
 .main-favicon.icon-youtube_com {
-    background-image: url(/img/main/icons/youtube.svg), linear-gradient(90deg, rgba(106, 199, 49, .2), rgba(147, 214, 107, .2) 48.96%, rgba(146, 226, 154, .2))
+    background-image: url(/img/main/icons/youtube.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-vimeo_com {
@@ -2291,7 +2291,7 @@ h6 .favicon {
 }
 
 .main-favicon.icon-facebook_com {
-    background-image: url(/img/main/icons/facebook.svg), linear-gradient(90deg, rgba(106, 199, 49, .2), rgba(147, 214, 107, .2) 48.96%, rgba(146, 226, 154, .2))
+    background-image: url(/img/main/icons/facebook.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-vk_com {
@@ -2305,61 +2305,61 @@ h6 .favicon {
 }
 
 .main-favicon.icon-twitter_com {
-    background-image: url(/img/main/icons/twitter.svg), linear-gradient(90deg, rgba(106, 199, 49, .2), rgba(147, 214, 107, .2) 48.96%, rgba(146, 226, 154, .2));
+    background-image: url(/img/main/icons/twitter.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent));
     height: 28px
 }
 
 .main-favicon.icon-instagram_com {
-    background-image: url(/img/main/icons/instagram.svg), linear-gradient(90deg, rgba(106, 199, 49, .2), rgba(147, 214, 107, .2) 48.96%, rgba(146, 226, 154, .2))
+    background-image: url(/img/main/icons/instagram.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-igReels {
-    background-image: url(/img/main/icons/igReels.svg), linear-gradient(90deg, rgba(106, 199, 49, .2), rgba(147, 214, 107, .2) 48.96%, rgba(146, 226, 154, .2))
+    background-image: url(/img/main/icons/igReels.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-igStories {
-    background-image: url(/img/main/icons/igStories.svg), linear-gradient(90deg, rgba(106, 199, 49, .2), rgba(147, 214, 107, .2) 48.96%, rgba(146, 226, 154, .2))
+    background-image: url(/img/main/icons/igStories.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-igViewer {
-    background-image: url(/img/main/icons/igViewer.svg), linear-gradient(90deg, rgba(106, 199, 49, .2), rgba(147, 214, 107, .2) 48.96%, rgba(146, 226, 154, .2))
+    background-image: url(/img/main/icons/igViewer.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-ytMain {
-    background-image: url(/img/main/icons/ytMain.svg), linear-gradient(90deg, rgba(106, 199, 49, .2), rgba(147, 214, 107, .2) 48.96%, rgba(146, 226, 154, .2))
+    background-image: url(/img/main/icons/ytMain.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-ytPlay {
-    background-image: url(/img/main/icons/ytPlay.svg), linear-gradient(90deg, rgba(106, 199, 49, .2), rgba(147, 214, 107, .2) 48.96%, rgba(146, 226, 154, .2))
+    background-image: url(/img/main/icons/ytPlay.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-ytShorts {
-    background-image: url(/img/main/icons/ytShorts.svg), linear-gradient(90deg, rgba(106, 199, 49, .2), rgba(147, 214, 107, .2) 48.96%, rgba(146, 226, 154, .2))
+    background-image: url(/img/main/icons/ytShorts.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-ytMusic {
-    background-image: url(/img/main/icons/ytMusic.svg), linear-gradient(90deg, rgba(106, 199, 49, .2), rgba(147, 214, 107, .2) 48.96%, rgba(146, 226, 154, .2))
+    background-image: url(/img/main/icons/ytMusic.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-tiktok_com {
-    background-image: url(/img/main/icons/tiktok.svg), linear-gradient(90deg, rgba(106, 199, 49, .2), rgba(147, 214, 107, .2) 48.96%, rgba(146, 226, 154, .2));
+    background-image: url(/img/main/icons/tiktok.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent));
     height: 26px
 }
 
 .main-favicon.icon-ttMp3 {
-    background-image: url(/img/main/icons/ttMp3.svg), linear-gradient(90deg, rgba(106, 199, 49, .2), rgba(147, 214, 107, .2) 48.96%, rgba(146, 226, 154, .2))
+    background-image: url(/img/main/icons/ttMp3.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-ttMp4 {
-    background-image: url(/img/main/icons/ttMp4.svg), linear-gradient(90deg, rgba(106, 199, 49, .2), rgba(147, 214, 107, .2) 48.96%, rgba(146, 226, 154, .2))
+    background-image: url(/img/main/icons/ttMp4.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-mp3 {
-    background-image: url(/img/main/icons/mp3.svg), linear-gradient(90deg, rgba(106, 199, 49, .2), rgba(147, 214, 107, .2) 48.96%, rgba(146, 226, 154, .2))
+    background-image: url(/img/main/icons/mp3.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-mov {
-    background-image: url(/img/main/icons/mov.svg), linear-gradient(90deg, rgba(106, 199, 49, .2), rgba(147, 214, 107, .2) 48.96%, rgba(146, 226, 154, .2))
+    background-image: url(/img/main/icons/mov.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-dailymotion_com {
@@ -2419,13 +2419,13 @@ h6 .favicon {
 }
 
 .main-favicon.icon-youtube-transcript {
-    background-image: url(/img/main/icons/yt-transcript.svg), linear-gradient(90deg, rgba(106, 199, 49, .2), rgba(147, 214, 107, .2) 48.96%, rgba(146, 226, 154, .2));
+    background-image: url(/img/main/icons/yt-transcript.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent));
     height: 26px;
     cursor: pointer
 }
 
 .main-favicon.icon-youtube-subtitles-download {
-    background-image: url(/img/main/icons/yt-subtitles.svg), linear-gradient(90deg, rgba(106, 199, 49, .2), rgba(147, 214, 107, .2) 48.96%, rgba(146, 226, 154, .2));
+    background-image: url(/img/main/icons/yt-subtitles.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent));
     height: 26px;
     cursor: pointer
 }
@@ -2849,7 +2849,7 @@ table.news td ul {
 }
 
 .feature-slider .more:hover {
-    color: #73a406;
+    color: var(--brand);
     text-decoration: none
 }
 
@@ -3310,7 +3310,7 @@ ul.steps-2 li {
 }
 
 .extension .info .version {
-    color: #79b003;
+    color: var(--brand);
     display: none;
     margin-left: .7em
 }
@@ -3545,7 +3545,7 @@ ul.steps-2 li {
 
 .instruction td div b {
     color: #fff;
-    background-color: rgba(143, 200, 13, .7);
+    background-color: color-mix(in srgb, var(--brand) 70%, transparent);
     border-radius: 50%;
     font-size: 30px;
     font-weight: 400;
@@ -3872,7 +3872,7 @@ ul.steps-2 li {
 }
 
 .custom-amount input.valid {
-    border-color: #00c000
+    border-color: var(--brand)
 }
 
 .custom-amount input.error {
@@ -4306,7 +4306,7 @@ ul.steps-2 li {
 .how-to-use-v2 li.how-to-step-apk .install-apk-button {
     width: calc(100% - 14px);
     max-width: 400px;
-    background: radial-gradient(50% 50% at 50% 50%, #76b541 0, #5db115 41.67%, #76d624 100%);
+    background: radial-gradient(50% 50% at 50% 50%, var(--brand) 0, var(--brand) 41.67%, var(--brand) 100%);
     border-radius: 10px;
     color: #fff;
     font-family: Roboto, sans-serif;
@@ -4371,17 +4371,17 @@ ul.steps-2 li {
 
 .how-to-use-v2 li .how-to-use-middle-text p .green-bold {
     font-weight: 700;
-    color: #7ed214
+    color: var(--brand)
 }
 
 .how-to-use-v2 li .how-to-use-middle-text p a {
     word-break: break-all;
-    color: #7ed214
+    color: var(--brand)
 }
 
 .how-to-use-v2 li .how-to-use-middle-text .install-helper-button {
     width: 100%;
-    background: linear-gradient(83.64deg, #3dd84d 55.01%, #00b75a 106.83%);
+    background: linear-gradient(83.64deg, var(--brand) 55.01%, var(--brand) 106.83%);
     border-radius: 10px;
     color: #fff;
     font-family: Roboto, sans-serif;
@@ -5452,7 +5452,7 @@ ul.steps-2 li {
 
 .sf-helper-block-heading h2 {
     text-align: left;
-    color: #259d1e;
+    color: var(--brand);
     font-size: 24px;
     line-height: 32px;
     margin: 10px 0;
@@ -5564,7 +5564,7 @@ ul.steps-2 li {
 }
 
 .wrapper .yt-with-helper-block-download a {
-    background: linear-gradient(180deg, #53c515 -58.93%, #259d1e 208.93%);
+    background: linear-gradient(180deg, var(--brand) -58.93%, var(--brand) 208.93%);
     border-radius: 6px;
     padding: 6px 23px;
     color: #fff;
@@ -5667,7 +5667,7 @@ ul.steps-2 li {
 }
 
 .yt-howto-download-step h3 .green-bold {
-    color: #7ebb6a
+    color: var(--brand)
 }
 
 .yt-howto-download-step img,
@@ -5753,7 +5753,7 @@ ul.steps-2 li {
         color: #fff;
         font-size: 20px;
         text-decoration: none;
-        background: linear-gradient(170.06deg, #7ae70d -34.7%, #058124 125.07%);
+        background: linear-gradient(170.06deg, var(--brand) -34.7%, var(--brand-dark) 125.07%);
         border-radius: 6px
     }
 }
@@ -5778,7 +5778,7 @@ ul.steps-2 li {
     }
     .yt-download-desktop-best {
         padding: 25px 84px;
-        border: 2px solid #299f1d;
+        border: 2px solid var(--brand);
         border-radius: 8px
     }
     .yt-download-desktop-step {
@@ -6108,7 +6108,7 @@ ul.steps-2 li {
 .button2_theme_green {
     color: #fff;
     background-color: var(--brand);
-    box-shadow: 0 3px #6b9c00
+    box-shadow: 0 3px var(--brand)
 }
 
 a.button2_theme_green,
@@ -6137,8 +6137,8 @@ a.button2_theme_green:visited {
 }
 
 .button2_simple_green {
-    color: #6b9c00;
-    border-color: #6b9c00
+    color: var(--brand);
+    border-color: var(--brand)
 }
 
 .button2_size_m {
@@ -6531,7 +6531,7 @@ a.button2_theme_green:visited {
 }
 
 .downloader-2 .result-box.attempt-success {
-    background-color: #f3fcf3
+    background-color: var(--brand-soft)
 }
 
 .downloader-2 .result-box.attempt-fail {
@@ -6714,8 +6714,8 @@ html:not(.touch) .downloader-2 .result-box.unsupported {
 
 .downloader-2 .result-box .link-box .def-btn-box {
     color: #fff;
-    background-color: #00a129;
-    border: 2px solid #00a129;
+    background-color: var(--brand);
+    border: 2px solid var(--brand);
     display: block;
     float: left;
     padding: 0 10px;
@@ -6740,9 +6740,9 @@ html:not(.touch) .downloader-2 .result-box.unsupported {
 }
 
 .downloader-2 .result-box .link-box .drop-down-box .def-btn-name {
-    color: #00a129;
+    color: var(--brand);
     background-color: #fff;
-    border: 2px solid #00a129;
+    border: 2px solid var(--brand);
     position: relative;
     overflow: hidden;
     padding: 0 33px 0 10px;
@@ -6780,9 +6780,9 @@ html:not(.touch) .downloader-2 .result-box.unsupported {
 }
 
 .downloader-2 .result-box .link-box .drop-down-box .list .links {
-    color: #00a129;
+    color: var(--brand);
     background-color: #fff;
-    border: 2px solid #00a129;
+    border: 2px solid var(--brand);
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .42)
 }
 
@@ -6809,12 +6809,12 @@ html:not(.touch) .downloader-2 .result-box.unsupported {
 }
 
 .downloader-2 .result-box .link-box .second-btn-box:hover {
-    border-color: #00a129
+    border-color: var(--brand)
 }
 
 .downloader-2 .result-box .link-box.single .drop-down-box .def-btn-name {
     color: #fff;
-    background-color: #00a129;
+    background-color: var(--brand);
     padding-right: 10px;
     padding-left: 0
 }
@@ -6851,7 +6851,7 @@ html:not(.touch) .downloader-2 .result-box.unsupported {
 }
 
 .downloader-2 .result-box .link-box .more-links a {
-    color: #00a129;
+    color: var(--brand);
     display: block;
     position: relative;
     line-height: 30px;
@@ -6875,8 +6875,8 @@ html:not(.touch) .downloader-2 .result-box.unsupported {
 
 .downloader-2 .result-box .link-box .more-links a:hover,
 .downloader-2 .result-box .link-box.showall .more-links a {
-    border-top: 1px solid #00a129;
-    border-bottom: 1px solid #00a129;
+    border-top: 1px solid var(--brand);
+    border-bottom: 1px solid var(--brand);
     padding-top: 0;
     padding-bottom: 0
 }
@@ -6886,7 +6886,7 @@ html:not(.touch) .downloader-2 .result-box.unsupported {
 }
 
 .downloader-2 .result-box .link-box .list .link {
-    color: #00a129;
+    color: var(--brand);
     display: block;
     position: relative;
     line-height: 32px;
@@ -6913,7 +6913,7 @@ html:not(.touch) .downloader-2 .result-box.unsupported {
 
 .downloader-2 .result-box .link-box .list .link:hover {
     color: #fff;
-    background-color: #00a129
+    background-color: var(--brand)
 }
 
 .downloader-2 .result-box .link-box .list .link:hover .subname {
@@ -7057,7 +7057,7 @@ html:not(.touch) .downloader-2 .result-box.unsupported {
 }
 
 .downloader-2 .link-plus a {
-    color: #00a129
+    color: var(--brand)
 }
 
 .result-box.video .thumb-box .clip {
@@ -7409,7 +7409,7 @@ html:not(.touch) .downloader-2 .result-box.unsupported {
 
 .downloader-2 .promo .text p.button a {
     color: #fff;
-    background-color: #00a129;
+    background-color: var(--brand);
     display: inline-block;
     height: 38px;
     line-height: 38px;
@@ -8926,7 +8926,7 @@ html:not(.touch).ru .downloader-2 .promo.tz.unsupported .text-tz-block-text {
 }
 
 .downloader-container {
-    background: linear-gradient(135deg, #376f9d, #66cdcc) #376f9d;
+    background: linear-gradient(135deg, #376f9d, var(--brand)) #376f9d;
     margin-top: -11px;
     padding-bottom: 20px;
     color: #fff
@@ -8984,7 +8984,7 @@ html:not(.touch).ru .downloader-2 .promo.tz.unsupported .text-tz-block-text {
 
 .downloader-container .downloader-2 .link-form .submit {
     color: #fff;
-    background: #85be07;
+    background: var(--brand);
     border: none;
     margin: 2px;
     width: 42px;
@@ -9081,7 +9081,7 @@ html:not(.touch).ru .downloader-2 .promo.tz.unsupported .text-tz-block-text {
 .downloader-container-right .button2_theme_green {
     font-size: 30px;
     font-weight: 300;
-    box-shadow: 0 4px 0 #6c9b01;
+    box-shadow: 0 4px 0 var(--brand);
     line-height: 60px;
     padding: 0 24px;
     vertical-align: middle;
@@ -9292,8 +9292,8 @@ html.ja .downloader-span-or {
     border-radius: 4px;
     text-decoration: none;
     color: #fff;
-    background-color: #4f9a0b;
-    box-shadow: 0 3px #3c7808;
+    background-color: var(--brand);
+    box-shadow: 0 3px var(--brand-dark);
     font-size: 24px;
     line-height: 1.3;
     font-weight: 700;
@@ -9305,13 +9305,13 @@ html.ja .downloader-span-or {
 
 .yt-article_install-btn:hover {
     color: #fff;
-    background-color: #488c0a;
-    box-shadow: 0 3px #356a07
+    background-color: var(--brand-dark);
+    box-shadow: 0 3px var(--brand-dark)
 }
 
 .yt-article_install-btn:active {
     color: #fff;
-    box-shadow: 0 3px #488c0a
+    box-shadow: 0 3px var(--brand-dark)
 }
 
 .yt-article_install-btn span {
@@ -9453,7 +9453,7 @@ html.ja .downloader-span-or {
 }
 
 .youtube-download-app-page .install-btn-android {
-    background: radial-gradient(50% 50% at 50% 50%, #76b541 0, #5db115 41.67%, #76d624 100%);
+    background: radial-gradient(50% 50% at 50% 50%, var(--brand) 0, var(--brand) 41.67%, var(--brand) 100%);
     border-radius: 10px;
     line-height: 1;
     font-size: 1.675rem;
@@ -9515,7 +9515,7 @@ html.ja .downloader-span-or {
     text-decoration: none;
     gap: 8px;
     transition: background-color .7s ease;
-    border: 1px solid #76d624;
+    border: 1px solid var(--brand);
     filter: drop-shadow(6px 6px 10px rgba(45, 65, 0, .12))
 }
 
@@ -10828,7 +10828,7 @@ h4.chameleon-item__title {
     font-family: Roboto, sans-serif;
     display: inline-block;
     vertical-align: middle;
-    background-color: #89c335;
+    background-color: var(--brand);
     text-decoration: none;
     font-weight: 700;
     font-size: 16px;
@@ -10934,15 +10934,15 @@ h4.chameleon-item__title {
 }
 
 .tm .chameleon-item__mark {
-    color: #78ae2e
+    color: var(--brand)
 }
 
 .tm .chameleon-item__button {
-    background-color: #89c335
+    background-color: var(--brand)
 }
 
 .tm .chameleon-item__button:hover {
-    background-color: #89c335 !important
+    background-color: var(--brand) !important
 }
 
 .tm .chameleon-item__button--disabled {
@@ -10964,7 +10964,7 @@ h4.chameleon-item__title {
     line-height: 18px;
     text-transform: none;
     transition: all .1s ease-out;
-    background-color: #89c335
+    background-color: var(--brand)
 }
 
 .tm .chameleon-item__store-button:before {
@@ -11072,7 +11072,7 @@ h4.chameleon-item__title {
 }
 
 .search-panel .downloader-2 .tarea-wrap input {
-    border: 5px solid #7ed214;
+    border: 5px solid var(--brand);
     height: 50px;
     padding-left: 12px;
     font-family: Roboto, sans-serif;
@@ -11085,7 +11085,7 @@ h4.chameleon-item__title {
 }
 
 .search-panel .downloader-2 .link-form .submit {
-    background: none #7ed214;
+    background: none var(--brand);
     border: none;
     box-shadow: none;
     font-family: Roboto, sans-serif;
@@ -11228,7 +11228,7 @@ h4.chameleon-item__title {
     width: 34px;
     height: 34px;
     border-radius: 50%;
-    background: #7ed20c;
+    background: var(--brand);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11248,7 +11248,7 @@ h4.chameleon-item__title {
 
 .search-panel__mobile .downloader-2 .tarea-wrap input,
 .search-panel__mobile .downloader-2 .tarea-wrap textarea {
-    border: 5px solid #7ed214;
+    border: 5px solid var(--brand);
     height: 66px;
     font-family: Roboto, sans-serif;
     font-size: 1.125rem;
@@ -11256,8 +11256,8 @@ h4.chameleon-item__title {
 }
 
 .search-panel__mobile .downloader-2 .link-form .submit {
-    border: 5px solid #7ed214;
-    background-color: #7ed214;
+    border: 5px solid var(--brand);
+    background-color: var(--brand);
     height: 66px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -11529,7 +11529,7 @@ h4.chameleon-item__title {
     text-decoration: none;
     text-transform: uppercase;
     color: #fff;
-    background: #7ed214
+    background: var(--brand)
 }
 
 .how-to-install-popup--v2 .how-to-install-popup__button:hover {
@@ -11621,7 +11621,7 @@ h4.chameleon-item__title {
 @keyframes ig-stories-loader-dot-animation {
     0%,
     30% {
-        background-color: #7ed338
+        background-color: var(--brand)
     }
     60%,
     to {
@@ -12001,7 +12001,7 @@ h4.chameleon-item__title {
     text-overflow: ellipsis;
     white-space: nowrap;
     color: #353535;
-    background: #7ed338;
+    background: var(--brand);
     transition: color .15s;
     cursor: pointer
 }
@@ -12269,7 +12269,7 @@ h4.chameleon-item__title {
     text-overflow: ellipsis;
     white-space: nowrap;
     color: #000;
-    background: #7ed338;
+    background: var(--brand);
     cursor: pointer
 }
 
@@ -12429,7 +12429,7 @@ h4.chameleon-item__title {
     text-overflow: ellipsis;
     white-space: nowrap;
     color: #000;
-    background: #7ed338;
+    background: var(--brand);
     cursor: pointer
 }
 
@@ -12558,7 +12558,7 @@ h4.chameleon-item__title {
     font-weight: 700;
     text-align: center;
     color: #f9f9f9;
-    background: linear-gradient(263.67deg, #35bffb 6.28%, #00a7ee 86.68%), #7ed338;
+    background: linear-gradient(263.67deg, #35bffb 6.28%, #00a7ee 86.68%), var(--brand);
     border-radius: 10px;
     text-decoration: none;
     cursor: pointer
@@ -12578,7 +12578,7 @@ h4.chameleon-item__title {
     font-weight: 700;
     text-align: center;
     color: #fff;
-    background: #11bb36;
+    background: var(--brand);
     border-radius: 80px;
     text-decoration: none;
     cursor: pointer
@@ -13130,5 +13130,5 @@ h4.chameleon-item__title {
 .nav-drop-menu{display:none;position:absolute;top:100%;left:0;min-width:210px;max-height:calc(100vh - 80px);overflow-y:auto;background:#fff;border:1px solid #e6e6e6;border-radius:10px;box-shadow:0 10px 24px rgba(0,0,0,.12);padding:6px 0;z-index:60;text-align:left}
 .nav-drop:hover .nav-drop-menu,.nav-drop:focus-within .nav-drop-menu{display:block}
 .nav-drop-menu a{display:block;padding:9px 16px;color:#333;font-size:14px;text-decoration:none;white-space:nowrap}
-.nav-drop-menu a:hover{background:var(--brand-soft);color:#5a7d05}
+.nav-drop-menu a:hover{background:var(--brand-soft);color:var(--brand-dark)}
 @media (max-width:768px){.nav-drop{display:block}.nav-drop-menu{display:none;position:static;box-shadow:none;border:none;border-radius:0;padding:0}.nav-drop.open .nav-drop-menu{display:block}.nav-drop-menu a{padding:11px 18px 11px 28px}}

@@ -10,28 +10,28 @@
   // Inject our own styles at runtime, so the layout never depends on a
   // cached stylesheet: centred result, spinner, professional buttons.
   var css = '#sf_result{max-width:960px;margin:0 auto;width:100%;box-sizing:border-box;text-align:center;padding:0 12px}' +
-    '.sd-card{margin:18px auto;padding:22px 20px;border:1px solid #e3e8e3;border-radius:14px;background:#fff;box-shadow:0 2px 14px rgba(0,0,0,.06);text-align:center}' +
-    '.sd-card img{max-width:320px;max-height:240px;width:auto;height:auto;object-fit:contain;border-radius:10px;display:block;margin:0 auto 14px;background:#eef1ee}' +
-    '.sd-skel{margin:18px auto;padding:22px 20px;border:1px solid #e3e8e3;border-radius:14px;background:#fff;box-shadow:0 2px 14px rgba(0,0,0,.06);text-align:center}' +
-    '.sd-skel-thumb{width:320px;max-width:100%;height:180px;margin:0 auto 14px;border-radius:10px;background:#eef1ee;display:flex;align-items:center;justify-content:center;animation:sd-pulse 1.4s ease-in-out infinite}' +
-    '.sd-skel-line{height:14px;border-radius:7px;background:#eef1ee;margin:0 auto 10px;animation:sd-pulse 1.4s ease-in-out infinite}' +
-    '.sd-skel-btn{display:inline-block;width:86px;height:40px;border-radius:8px;background:#eef1ee;margin:5px;animation:sd-pulse 1.4s ease-in-out infinite}' +
+    '.sd-card{margin:18px auto;padding:22px 20px;border:1px solid #e2e8f0;border-radius:14px;background:#fff;box-shadow:0 2px 14px rgba(0,0,0,.06);text-align:center}' +
+    '.sd-card img{max-width:320px;max-height:240px;width:auto;height:auto;object-fit:contain;border-radius:10px;display:block;margin:0 auto 14px;background:#f1f5f9}' +
+    '.sd-skel{margin:18px auto;padding:22px 20px;border:1px solid #e2e8f0;border-radius:14px;background:#fff;box-shadow:0 2px 14px rgba(0,0,0,.06);text-align:center}' +
+    '.sd-skel-thumb{width:320px;max-width:100%;height:180px;margin:0 auto 14px;border-radius:10px;background:#f1f5f9;display:flex;align-items:center;justify-content:center;animation:sd-pulse 1.4s ease-in-out infinite}' +
+    '.sd-skel-line{height:14px;border-radius:7px;background:#f1f5f9;margin:0 auto 10px;animation:sd-pulse 1.4s ease-in-out infinite}' +
+    '.sd-skel-btn{display:inline-block;width:86px;height:40px;border-radius:8px;background:#f1f5f9;margin:5px;animation:sd-pulse 1.4s ease-in-out infinite}' +
     '@keyframes sd-pulse{0%,100%{opacity:1}50%{opacity:.55}}' +
     '.sd-card h3{font-size:20px;line-height:1.4;margin:0 0 6px;color:#222}' +
     '.sd-meta{font-size:14px;color:#777;margin:0 0 14px}' +
     '.sd-q{display:inline-block;margin:5px;padding:11px 20px;cursor:pointer;border:none;border-radius:8px;background:var(--brand);color:#fff;font-size:15px;font-weight:700}' +
-    '.sd-q:hover{background:#74a806}' +
+    '.sd-q:hover{background:var(--brand-dark)}' +
     '.sd-mp3{display:inline-block;margin:5px;padding:11px 20px;cursor:pointer;border:2px solid var(--brand);border-radius:8px;background:#fff;color:var(--brand-dark);font-size:15px;font-weight:700}' +
     '.sd-status{margin:16px auto;padding:0;border:0;border-radius:0;background:none;display:flex;align-items:center;justify-content:center;gap:12px;font-size:15px;color:#2f4d0a;text-align:left}' +
     '.sd-error{margin:16px auto;padding:16px 18px;border:1px solid #f5c2c7;border-left:5px solid #dc3545;border-radius:10px;background:#fff5f5;text-align:left}' +
-    '.sd-spin{width:26px;height:26px;min-width:26px;border:3px solid #d9e8d9;border-top-color:var(--brand);border-radius:50%;animation:sd-rot 1s linear infinite}' +
+    '.sd-spin{width:26px;height:26px;min-width:26px;border:3px solid var(--brand-soft);border-top-color:var(--brand);border-radius:50%;animation:sd-rot 1s linear infinite}' +
     '@keyframes sd-rot{to{transform:rotate(360deg)}}' +
     '.sd-cancel{display:inline-block;margin:5px;padding:10px 18px;cursor:pointer;border:2px solid #dc3545;border-radius:8px;background:#fff;color:#b02a37;font-size:14px;font-weight:700}' +
     '.faq_item_title{cursor:pointer}' +
     '.sd-dl{display:inline-block;margin-top:10px;padding:13px 26px;background:var(--brand);color:#fff!important;border-radius:8px;font-weight:700;font-size:16px;text-decoration:none;max-width:100%;box-sizing:border-box;white-space:normal;overflow-wrap:anywhere;word-break:break-word;text-align:center;line-height:1.4}' +
     '@media (max-width:600px){.sd-card{padding:16px 12px;margin:14px auto}.sd-card h3{font-size:17px}.sd-card img{max-width:100%}.sd-q,.sd-mp3{padding:10px 13px;font-size:14px;margin:4px 3px}.sd-status{flex-wrap:wrap;justify-content:center;text-align:center}.sd-error{padding:14px}.sd-dl{padding:12px 16px;font-size:15px}}' +
     '.sd-cookie{position:fixed;left:0;right:0;bottom:0;z-index:9999;display:flex;justify-content:center;padding:12px;box-sizing:border-box;pointer-events:none}' +
-    '.sd-cookie-in{pointer-events:auto;max-width:960px;width:100%;background:#fff;border:1px solid #e3e8e3;border-radius:14px;box-shadow:0 4px 24px rgba(0,0,0,.14);padding:14px 18px;display:flex;align-items:center;gap:14px;box-sizing:border-box}' +
+    '.sd-cookie-in{pointer-events:auto;max-width:960px;width:100%;background:#fff;border:1px solid #e2e8f0;border-radius:14px;box-shadow:0 4px 24px rgba(0,0,0,.14);padding:14px 18px;display:flex;align-items:center;gap:14px;box-sizing:border-box}' +
     '.sd-cookie-t{flex:1;font-size:14px;line-height:1.5;color:#444;text-align:left}' +
     '.sd-cookie-t b{color:#222}' +
     '.sd-cookie-a{flex:0 0 auto;display:flex;gap:8px;align-items:center}' +
@@ -66,7 +66,7 @@
     var rows = '';
     for (var i = 0; i < q.length; i++) {
       var e = q[i];
-      rows += '<div data-job="' + esc(e.jobId) + '" style="display:flex;align-items:center;gap:12px;padding:12px 14px;margin:8px 0;border:1px solid #e3e8e3;border-radius:10px;background:#fff">' +
+      rows += '<div data-job="' + esc(e.jobId) + '" style="display:flex;align-items:center;gap:12px;padding:12px 14px;margin:8px 0;border:1px solid #e2e8f0;border-radius:10px;background:#fff">' +
         (e.thumbnail ? '<img src="' + thumbSrc(e.thumbnail, e.url) + '" alt="" referrerpolicy="no-referrer" onerror="this.style.display=\'none\'" style="width:64px;height:36px;object-fit:cover;border-radius:6px;flex:0 0 auto">' : '') +
         '<div style="flex:1;min-width:0"><div style="font-weight:700;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + esc(e.title || 'Video') + '</div>' +
         '<div class="sd-qstatus" style="font-size:13px;color:#777">Checking...</div></div>' +

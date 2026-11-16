@@ -1,39 +1,25 @@
-## Current theme (2026-11-16): BLUE
+# ClipDown theme: ONE LINE changes the whole site
 
---brand is now #2563eb (blue), --brand-dark #1d4ed8, --brand-soft #eff6ff, --brand-bg #dbeafe. Logo and manifest theme_color are blue too. To change colour again, edit only the :root block in public/build/css/styles.css, plus the logo SVG and manifest theme_color if the logo should match.
-
-# ClipDown theme
-
-The whole site takes its brand colour from ONE line in `public/build/css/styles.css`,
-at the very top of the file:
+Change ONLY this line in `public/build/css/styles.css`:
 
 ```css
 :root{
-  --brand:#84bd07;
-  --brand-dark:#6da305;
-  --brand-soft:#f6fbf0;
-  --brand-bg:#f7fcef;
+  --brand:#2563eb;
+  ...
 }
 ```
 
-To change the colour of the entire site, change only the `--brand` line.
-Everything else (buttons, links, hero highlights, hover rings, pills and
-step cards) uses `var(--brand)`, `var(--brand-dark)`, `var(--brand-soft)`
-or `var(--brand-bg)`, so it follows automatically. Do not search and
-replace colours across the files.
+`--brand-dark`, `--brand-soft` and `--brand-bg` are derived from `--brand` with
+`color-mix`, so they follow automatically. Every green from the old VidSnap
+template was replaced with `var(--brand)` / `var(--brand-dark)` /
+`var(--brand-soft)` / `var(--brand-bg)`, and every green glow with
+`color-mix(in srgb, var(--brand) N%, transparent)`. No other file needs a
+colour edit, except the three things CSS cannot reach:
 
-Examples (change the one line, nothing else):
+- `public/img/logo_small2.svg` (an SVG loaded as an image has no page CSS)
+- `public/manifest.json` `theme_color`
+- `<meta name="theme-color">` in the HTML pages
 
-- Yellow: `--brand:#f5c518;`
-- Blue: `--brand:#2563eb;`
-
-If you change `--brand` a lot, you may also want to adjust `--brand-dark`
-(used for hover text and small headings) and `--brand-soft` / `--brand-bg`
-(used for pale card and hero backgrounds) to matching tones, but the
-site still works if you only change `--brand`.
-
-Two places keep the default green as a literal value and are NOT driven
-by the variable: the `<meta name="theme-color">` tag in each HTML page
-(a meta tag cannot use `var()`), the `theme_color` in `public/manifest.json`,
-and the text logo `public/img/logo_small2.svg` (an SVG loaded as an image
-has no page CSS context). Change those three by hand if you recolour.
+Current theme (2026-11-16): BLUE, --brand #2563eb.
+Examples: yellow `--brand:#f5c518;`, green `--brand:#84bd07;`.
+After changing --brand, bump `styles.css?v=` in the HTML pages so browsers fetch the new CSS.

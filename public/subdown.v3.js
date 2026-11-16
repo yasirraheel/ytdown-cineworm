@@ -170,6 +170,13 @@
     if (form) form.classList.toggle('has-paste', !hasUrl);
   }
   input.addEventListener('input', syncPasteBtn);
+  // Paste/change/keyup too: some browsers and autofill do not fire a plain
+  // 'input' on paste, and the arrow must appear the moment a link lands.
+  input.addEventListener('paste', function () { setTimeout(syncPasteBtn, 0); });
+  input.addEventListener('change', syncPasteBtn);
+  input.addEventListener('keyup', syncPasteBtn);
+  input.addEventListener('focus', syncPasteBtn);
+  setTimeout(syncPasteBtn, 400);
   syncPasteBtn();
   // Paste only if the clipboard holds a URL; anything else is ignored.
   function pickUrlFromClipboard(text) {

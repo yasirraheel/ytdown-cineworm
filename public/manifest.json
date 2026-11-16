@@ -1,0 +1,24 @@
+{
+  "background_color": "#ffffff",
+  "description": "VidSnap \u2014 Free Online Video Downloader",
+  "display": "standalone",
+  "icons": [
+    {
+      "purpose": "any",
+      "sizes": "192x192",
+      "src": "/img/extension/icon_192.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "any maskable",
+      "sizes": "512x512",
+      "src": "/img/extension/icon_512.png",
+      "type": "image/png"
+    }
+  ],
+  "name": "VidSnap",
+  "scope": "/",
+  "short_name": "VidSnap",
+  "start_url": "/",
+  "theme_color": "#84bd07"
+}

@@ -237,6 +237,15 @@ function downloadArgs(url, quality, outTpl) {
       ? ['--no-playlist', '--continue', '-f', 'ba', '-x', '--audio-format', 'mp3', '--audio-quality', '0', '-o', outTpl, url]
       : ['--no-playlist', '--continue', '-f', 'ba/b', '-o', outTpl, url];
   }
+  // Some platforms (especially Facebook) expose combined formats with
+  // symbolic ids such as `sd` and `hd`, not a numeric height. Passing the
+  // id directly keeps those downloads on the exact format shown by /api/info.
+  if (typeof quality === 'string' && quality.startsWith('format:')) {
+    const formatId = quality.slice('format:'.length).trim();
+    if (/^[A-Za-z0-9._-]+$/.test(formatId)) {
+      return ['--no-playlist', '--continue', '-f', formatId, '-o', outTpl, url];
+    }
+  }
   if (HAS_FFMPEG) {
     // Format selector with full fallbacks: DASH (bv+ba) first, then best
     // single file at the wanted height, then any best. TikTok/Facebook
@@ -248,8 +257,11 @@ function downloadArgs(url, quality, outTpl) {
     // no long title for it to trim; the platform title is applied to
     // the finished file by finishJob (byte-safe, trimmed from the end).
     const h = quality === 'best' ? 1080 : (parseInt(quality, 10) || 720);
-    const f = `bv*[height<=${h}]+ba/b[height<=${h}]/best[height<=${h}]/best`;
-    return ['--no-playlist', '--continue', '-f', f, '--merge-output-format', 'mp4', '-o', outTpl, url];
+    // Prefer H.264/AAC, which the shared-host FFmpeg can merge reliably.
+    // The final fallback still allows AV1/Opus sources, while -strict -2
+    // keeps the old FFmpeg 3.4 binary from rejecting Opus inside MP4.
+    const f = `bv*[height<=${h}][vcodec^=avc1]+ba[acodec^=mp4a]/bv*[height<=${h}][vcodec^=avc1]+ba/b[height<=${h}][vcodec^=avc1]/bv*[height<=${h}]+ba/b[height<=${h}]/best`;
+    return ['--no-playlist', '--continue', '-f', f, '--merge-output-format', 'mp4', '--postprocessor-args', 'Merger+ffmpeg:-strict -2', '-o', outTpl, url];
   }
   // No ffmpeg: single pre-merged file only, up to 720p.
   const f = quality === 'best' ? 'best[height<=720]/18/b[height<=720]/best' : `best[height<=${parseInt(quality, 10) || 720}]/b[height<=${parseInt(quality, 10) || 720}]/best`;
@@ -1073,7 +1085,15 @@ const server = http.createServer(async (req, res) => {
       const nearestStd = v => STD.reduce((a, b) => Math.abs(b - v) < Math.abs(a - v) ? b : a);
       const formats = [];
       for (const f of (j.formats || [])) {
-        if (!f.height || f.height < 144 || !f.ext || !['mp4', 'webm'].includes(f.ext) || f.vcodec === 'none') continue;
+        const formatId = String(f.format_id || '').trim();
+        const platform = detectPlatform(url);
+        const symbolic = platform === 'Facebook' && /^(sd|hd)$/i.test(formatId) && f.vcodec !== 'none';
+        if ((!f.height || f.height < 144) && !symbolic) continue;
+        if (!f.ext || !['mp4', 'webm'].includes(f.ext) || f.vcodec === 'none') continue;
+        if (symbolic) {
+          formats.push({ label: formatId.toUpperCase(), height: `format:${formatId}` });
+          continue;
+        }
         const short = (f.width && f.height) ? Math.min(f.width, f.height) : f.height;
         const label = `${nearestStd(short)}p`;
         const prev = formats.find(x => x.label === label);

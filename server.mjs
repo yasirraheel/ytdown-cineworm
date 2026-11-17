@@ -686,7 +686,10 @@ function isDirectMedia(url) {
 // ".f…" is not mistaken for a part.
 const PART_FILE = /\.f(?:\d+|hls-[\w-]+|http-[\w-]+|sb\d+)\.(mp4|webm|mkv|mov)$/i;
 function pickJobFile(job, jobDir) {
-  const files = fs.readdirSync(jobDir).filter(f => fs.statSync(path.join(jobDir, f)).isFile() && f !== 'meta.json' && !f.endsWith('.info.json') && !f.endsWith('.part') && !f.endsWith('.ytdl') && !f.endsWith('.temp') && !PART_FILE.test(f));
+  const files = fs.readdirSync(jobDir).filter(f => {
+    const full = path.join(jobDir, f);
+    try { return fs.statSync(full).isFile() && fs.statSync(full).size > 0; } catch { return false; }
+  }).filter(f => f !== 'meta.json' && !f.endsWith('.info.json') && !f.endsWith('.part') && !f.endsWith('.ytdl') && !f.endsWith('.temp') && !PART_FILE.test(f));
   if (!files.length) return null;
   const videoExts = ['.mp4', '.webm', '.mkv', '.mov'];
   let pool = files.filter(f => videoExts.includes(path.extname(f).toLowerCase()));

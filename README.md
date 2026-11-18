@@ -1,11 +1,11 @@
-# ClipDown — live video downloader
+# CineGrab Downloader — live video downloader
 
 Single interface, server-first download.
 
 ## What this is
 - One page: paste any public video link (YouTube, TikTok, Instagram,
   Facebook, X, Vimeo, Dailymotion, Reddit, …), pick a quality, download.
-- The uploaded `ClipDown-clean.zip` is **template only** — a cleaned
+- The uploaded `CineGrab Downloader-clean.zip` is **template only** — a cleaned
   SaveFrom.net capture with no downloader backend (`savefrom.php` was
   missing, the form was visual-only). **All of its backend / API URLs
   are ignored.** No SaveFrom API, and no third-party downloader API,

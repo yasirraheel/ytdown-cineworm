@@ -313,13 +313,13 @@
   // Cookie consent: a small bottom banner, only for new visitors.
   // It never blocks the page and remembers the choice in this browser.
   try {
-    if (!localStorage.getItem('clipdown_consent')) {
+    if (!localStorage.getItem('cinegrab_consent')) {
       var cb = document.createElement('div');
       cb.className = 'sd-cookie';
-      cb.innerHTML = '<div class="sd-cookie-in"><div class="sd-cookie-t"><b>Your privacy matters.</b> ClipDown uses cookies and local storage only to remember your downloads and keep the site working smoothly. No tracking, no ads.</div><div class="sd-cookie-a"><button type="button" class="sd-cookie-no">Decline</button><button type="button" class="sd-cookie-ok">Accept</button></div></div>';
+      cb.innerHTML = '<div class="sd-cookie-in"><div class="sd-cookie-t"><b>Your privacy matters.</b> CineGrab Downloader uses cookies and local storage only to remember your downloads and keep the site working smoothly. No tracking, no ads.</div><div class="sd-cookie-a"><button type="button" class="sd-cookie-no">Decline</button><button type="button" class="sd-cookie-ok">Accept</button></div></div>';
       document.body.appendChild(cb);
-      cb.querySelector('.sd-cookie-ok').addEventListener('click', function () { try { localStorage.setItem('clipdown_consent', 'accepted'); } catch (e) {} cb.remove(); });
-      cb.querySelector('.sd-cookie-no').addEventListener('click', function () { try { localStorage.setItem('clipdown_consent', 'declined'); } catch (e) {} cb.remove(); });
+      cb.querySelector('.sd-cookie-ok').addEventListener('click', function () { try { localStorage.setItem('cinegrab_consent', 'accepted'); } catch (e) {} cb.remove(); });
+      cb.querySelector('.sd-cookie-no').addEventListener('click', function () { try { localStorage.setItem('cinegrab_consent', 'declined'); } catch (e) {} cb.remove(); });
     }
   } catch (e) {}
 })();

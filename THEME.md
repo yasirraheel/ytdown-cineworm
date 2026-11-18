@@ -1,4 +1,4 @@
-# ClipDown theme: ONE LINE changes the whole site
+# CineGrab Downloader theme: ONE LINE changes the whole site
 
 Change ONLY this line in `public/build/css/styles.css`:
 

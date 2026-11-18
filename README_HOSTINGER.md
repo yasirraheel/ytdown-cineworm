@@ -1,4 +1,4 @@
-# ClipDown — Hostinger Unlimited deploy guide
+# CineGrab Downloader — Hostinger Unlimited deploy guide
 
 Plan confirmed by the user on 2026-11-12: **Hostinger Unlimited**.
 No VPS needed if the steps below work — Unlimited supports Node.js

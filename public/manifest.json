@@ -1,6 +1,6 @@
 {
   "background_color": "#ffffff",
-  "description": "ClipDown \u2014 Free Online Video Downloader",
+  "description": "CineGrab Downloader \u2014 Free Online Video Downloader",
   "display": "standalone",
   "icons": [
     {
@@ -16,9 +16,9 @@
       "type": "image/png"
     }
   ],
-  "name": "ClipDown",
+  "name": "CineGrab Downloader",
   "scope": "/",
-  "short_name": "ClipDown",
+  "short_name": "CineGrab Downloader",
   "start_url": "/",
   "theme_color": "#2563eb"
 }

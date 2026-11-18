@@ -47,6 +47,7 @@ function rewriteHtmlForBase(html) {
   if (!BASE_PATH) return html;
   return html
     .replaceAll('https://ytdown.cineworm.org', `https://cineworm.org${BASE_PATH}`)
+    .replace('/build/css/styles.css?v=19', '/build/css/styles.css?v=20')
     // The captured local font CSS references files that are not part of the
     // deploy tree. The browser already has the same fallback stack from the
     // main stylesheet, so omit those two requests on the mounted path.

@@ -47,12 +47,36 @@ function rewriteHtmlForBase(html) {
   if (!BASE_PATH) return html;
   return html
     .replaceAll('https://ytdown.cineworm.org', `https://cineworm.org${BASE_PATH}`)
+    // The captured local font CSS references files that are not part of the
+    // deploy tree. The browser already has the same fallback stack from the
+    // main stylesheet, so omit those two requests on the mounted path.
+    .replace(/<link\b[^>]*href=['"][^'"]*\/font\/fonts\.css[^>]*>\s*/gi, '')
     .replace(/(\b(?:href|src|action|poster|content)=['"])\/(?![\/#])/gi, `$1${BASE_PATH}/`)
     .replace(/(url\(\s*)\/(?![\/#])/gi, `$1${BASE_PATH}/`)
     .replace(/<head(\s[^>]*)?>/i, `$&<script>window.CINEGRAB_BASE_PATH=${JSON.stringify(BASE_PATH)};</script>`);
 }
+function rewriteCssForBase(css) {
+  if (!BASE_PATH) return css;
+  return css.replace(/(url\(\s*['"]?)\/(?![\/#])/gi, `$1${BASE_PATH}/`);
+}
+function rewriteManifestForBase(json) {
+  if (!BASE_PATH) return json;
+  try {
+    const manifest = JSON.parse(json);
+    if (typeof manifest.scope === 'string' && manifest.scope.startsWith('/')) manifest.scope = appPath(manifest.scope);
+    if (typeof manifest.start_url === 'string' && manifest.start_url.startsWith('/')) manifest.start_url = appPath(manifest.start_url);
+    if (Array.isArray(manifest.icons)) {
+      manifest.icons = manifest.icons.map(icon => ({ ...icon, src: typeof icon.src === 'string' && icon.src.startsWith('/') ? appPath(icon.src) : icon.src }));
+    }
+    return JSON.stringify(manifest, null, 2);
+  } catch {
+    return json.replace(/(:\s*['"])\/(?![\/#])/g, `$1${BASE_PATH}/`);
+  }
+}
 function sendStaticFile(res, file, headers, status = 200) {
-  if (BASE_PATH && path.extname(file).toLowerCase() === '.html') {
+  const ext = path.extname(file).toLowerCase();
+  const isManifest = path.basename(file).toLowerCase() === 'manifest.json';
+  if (BASE_PATH && (ext === '.html' || ext === '.css' || isManifest)) {
     fs.readFile(file, 'utf8', (err, html) => {
       if (err) {
         res.writeHead(404, { 'Content-Type': mime['.html'] });
@@ -60,7 +84,8 @@ function sendStaticFile(res, file, headers, status = 200) {
         return;
       }
       res.writeHead(status, headers);
-      res.end(rewriteHtmlForBase(html));
+      const body = ext === '.html' ? rewriteHtmlForBase(html) : isManifest ? rewriteManifestForBase(html) : rewriteCssForBase(html);
+      res.end(body);
     });
     return;
   }

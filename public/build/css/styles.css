@@ -1024,17 +1024,17 @@ html {
     text-decoration: none;
     display: block;
     margin-left: 10px;
-    background: url(/img/logo_small2.svg?v=17) 50% 50% no-repeat;
-    background-size: 320px 40px;
-    width: 320px;
+    background: url(/img/logo_small2.svg?v=18) 50% 50% no-repeat;
+    background-size: 215px 40px;
+    width: 215px;
     height: 40px;
     opacity: .85
 }
 
 @media (min-width:768px) and (max-width:900px) {
     .header_v2 .logo {
-        background-size: 250px 31px;
-        width: 250px;
+        background-size: 215px 40px;
+        width: 215px;
         height: 30px
     }
 }

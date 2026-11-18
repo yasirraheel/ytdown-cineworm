@@ -6,19 +6,19 @@
     {
       "purpose": "any",
       "sizes": "192x192",
-      "src": "/img/extension/icon_192.png",
+      "src": "img/extension/icon_192.png",
       "type": "image/png"
     },
     {
       "purpose": "any maskable",
       "sizes": "512x512",
-      "src": "/img/extension/icon_512.png",
+      "src": "img/extension/icon_512.png",
       "type": "image/png"
     }
   ],
   "name": "CineGrab Downloader",
-  "scope": "/",
+  "scope": "./",
   "short_name": "CineGrab Downloader",
-  "start_url": "/",
+  "start_url": "./",
   "theme_color": "#2563eb"
 }

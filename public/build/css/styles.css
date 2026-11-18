@@ -923,7 +923,7 @@ html {
 }
 
 .green-btn-2.arrow:after {
-    background: url(/img/sprite_v2.png) 0 -307px no-repeat;
+    background: url(../../img/sprite_v2.png) 0 -307px no-repeat;
     content: "";
     display: block;
     position: absolute;
@@ -954,7 +954,7 @@ html {
 }
 
 .question-mark {
-    background: url(/img/sprite_v2.png) no-repeat 0 -177px;
+    background: url(../../img/sprite_v2.png) no-repeat 0 -177px;
     display: block;
     width: 18px;
     height: 18px;
@@ -1024,7 +1024,7 @@ html {
     text-decoration: none;
     display: block;
     margin-left: 10px;
-    background: url(/img/logo_small2.svg?v=18) 50% 50% no-repeat;
+    background: url(../../img/logo_small2.svg?v=18) 50% 50% no-repeat;
     background-size: 215px 40px;
     width: 215px;
     height: 40px;
@@ -1044,11 +1044,11 @@ html {
 }
 
 html.no-svg .header_v2 .logo {
-    background: url(/img/logo_small2.png?v=1) 50% 50% no-repeat
+    background: url(../../img/logo_small2.png?v=1) 50% 50% no-repeat
 }
 
 .auth-reg li a {
-    background-image: url(/img/sprite_v2.png);
+    background-image: url(../../img/sprite_v2.png);
     background-repeat: no-repeat;
     padding-left: 20px;
     line-height: 16px
@@ -1079,7 +1079,7 @@ html.no-svg .header_v2 .logo {
     margin: 2px 5px 0 0;
     width: 37px;
     height: 14px;
-    background: url(/img/sprite_v2.png) no-repeat 0 -161px
+    background: url(../../img/sprite_v2.png) no-repeat 0 -161px
 }
 
 .profile .load .percent {
@@ -1107,7 +1107,7 @@ html.no-svg .header_v2 .logo {
     z-index: 990;
     width: 152px;
     height: 82px;
-    background: url(/img/get250btn.png) no-repeat 0 0
+    background: url(../../img/get250btn.png) no-repeat 0 0
 }
 
 .nav-top-1 {
@@ -1266,7 +1266,7 @@ html.no-svg .header_v2 .logo {
 
 .lang-box .lang li a:before,
 .lang-box .lang li span:before {
-    background: url(/build/img/lang-sprite.png?h=3ac7c0f3);
+    background: url(../img/lang-sprite.png?h=3ac7c0f3);
     width: 16px;
     height: 16px;
     content: "";
@@ -1447,7 +1447,7 @@ html.no-svg .header_v2 .logo {
 }
 
 .social-btn a {
-    background: url(/img/socials.png) no-repeat 0 -100px;
+    background: url(../../img/socials.png) no-repeat 0 -100px;
     display: block;
     overflow: hidden;
     margin: 0;
@@ -1496,7 +1496,7 @@ html.no-svg .header_v2 .logo {
 }
 
 .working .main-block {
-    background: #fff url(/img/body_bg.gif?v=1) 0 0 repeat-x
+    background: #fff url(../../img/body_bg.gif?v=1) 0 0 repeat-x
 }
 
 .wrapper {
@@ -1681,7 +1681,7 @@ footer nav.f-nav .f-nav-column ul li .active {
     top: 0;
     left: 0;
     clip: rect(0, 16px, 16px, 0);
-    content: url(/img/sprite_v2.png)
+    content: url(../../img/sprite_v2.png)
 }
 
 #premium_notice .right-box {
@@ -1733,7 +1733,7 @@ footer nav.f-nav .f-nav-column ul li .active {
     top: -47px;
     left: -14px;
     clip: rect(53px, 8px, 57px, 0);
-    content: url(/img/sprite_v2.png)
+    content: url(../../img/sprite_v2.png)
 }
 
 #premium_notice.fold .box {
@@ -1807,7 +1807,7 @@ footer nav.f-nav .f-nav-column ul li .active {
 }
 
 #msg_content:before {
-    background: url(/img/sprite_v2.png) 0 -107px no-repeat;
+    background: url(../../img/sprite_v2.png) 0 -107px no-repeat;
     display: block;
     overflow: hidden;
     margin-top: -9px;
@@ -2072,7 +2072,7 @@ footer nav.f-nav .f-nav-column ul li .active {
 }
 
 .favicon {
-    background-image: url(/img/favicons_v4.png);
+    background-image: url(../../img/favicons_v4.png);
     background-repeat: no-repeat;
     background-position: 0 0;
     display: inline-block;
@@ -2267,7 +2267,7 @@ h6 .favicon {
 }
 
 .main-favicon {
-    background-image: url(/img/main/icons/web.svg);
+    background-image: url(../../img/main/icons/web.svg);
     background-repeat: no-repeat;
     display: block;
     width: auto;
@@ -2277,155 +2277,155 @@ h6 .favicon {
 }
 
 .main-favicon.icon-youtube_com {
-    background-image: url(/img/main/icons/youtube.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
+    background-image: url(../../img/main/icons/youtube.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-vimeo_com {
-    background-image: url(/img/main/icons/vimeo.svg);
+    background-image: url(../../img/main/icons/vimeo.svg);
     height: 26px
 }
 
 .main-favicon.icon-yandex_video {
-    background-image: url(/img/main/icons/yandex.svg);
+    background-image: url(../../img/main/icons/yandex.svg);
     height: 26px
 }
 
 .main-favicon.icon-facebook_com {
-    background-image: url(/img/main/icons/facebook.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
+    background-image: url(../../img/main/icons/facebook.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-vk_com {
-    background-image: url(/img/main/icons/vk.svg);
+    background-image: url(../../img/main/icons/vk.svg);
     height: 26px
 }
 
 .main-favicon.icon-soundcloud_com {
-    background-image: url(/img/main/icons/soundcloud.svg);
+    background-image: url(../../img/main/icons/soundcloud.svg);
     height: 26px
 }
 
 .main-favicon.icon-twitter_com {
-    background-image: url(/img/main/icons/twitter.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent));
+    background-image: url(../../img/main/icons/twitter.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent));
     height: 28px
 }
 
 .main-favicon.icon-instagram_com {
-    background-image: url(/img/main/icons/instagram.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
+    background-image: url(../../img/main/icons/instagram.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-igReels {
-    background-image: url(/img/main/icons/igReels.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
+    background-image: url(../../img/main/icons/igReels.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-igStories {
-    background-image: url(/img/main/icons/igStories.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
+    background-image: url(../../img/main/icons/igStories.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-igViewer {
-    background-image: url(/img/main/icons/igViewer.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
+    background-image: url(../../img/main/icons/igViewer.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-ytMain {
-    background-image: url(/img/main/icons/ytMain.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
+    background-image: url(../../img/main/icons/ytMain.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-ytPlay {
-    background-image: url(/img/main/icons/ytPlay.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
+    background-image: url(../../img/main/icons/ytPlay.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-ytShorts {
-    background-image: url(/img/main/icons/ytShorts.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
+    background-image: url(../../img/main/icons/ytShorts.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-ytMusic {
-    background-image: url(/img/main/icons/ytMusic.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
+    background-image: url(../../img/main/icons/ytMusic.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-tiktok_com {
-    background-image: url(/img/main/icons/tiktok.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent));
+    background-image: url(../../img/main/icons/tiktok.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent));
     height: 26px
 }
 
 .main-favicon.icon-ttMp3 {
-    background-image: url(/img/main/icons/ttMp3.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
+    background-image: url(../../img/main/icons/ttMp3.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-ttMp4 {
-    background-image: url(/img/main/icons/ttMp4.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
+    background-image: url(../../img/main/icons/ttMp4.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-mp3 {
-    background-image: url(/img/main/icons/mp3.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
+    background-image: url(../../img/main/icons/mp3.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-mov {
-    background-image: url(/img/main/icons/mov.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
+    background-image: url(../../img/main/icons/mov.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent))
 }
 
 .main-favicon.icon-dailymotion_com {
-    background-image: url(/img/main/icons/dailymotion.svg);
+    background-image: url(../../img/main/icons/dailymotion.svg);
     height: 26px
 }
 
 .main-favicon.icon-reddit_com {
-    background-image: url(/img/main/icons/reddit.svg);
+    background-image: url(../../img/main/icons/reddit.svg);
     height: 26px
 }
 
 .main-favicon.icon-threads {
-    background-image: url(/img/main/icons/threads.svg);
+    background-image: url(../../img/main/icons/threads.svg);
     height: 26px
 }
 
 .main-favicon.icon-pinterest_com {
-    background-image: url(/img/main/icons/pinterest.svg);
+    background-image: url(../../img/main/icons/pinterest.svg);
     height: 26px
 }
 
 .main-favicon.icon-convert-to-mp4 {
-    background-image: url(/img/main/icons/mp3.svg);
+    background-image: url(../../img/main/icons/mp3.svg);
     height: 26px;
     cursor: pointer
 }
 
 .main-favicon.icon-convert-mp4-to-mp3 {
-    background-image: url(/img/main/icons/convert-mp3.svg);
+    background-image: url(../../img/main/icons/convert-mp3.svg);
     height: 26px;
     cursor: pointer
 }
 
 .main-favicon.icon-convert-mov-to-mp4 {
-    background-image: url(/img/main/icons/convert-mov.svg);
+    background-image: url(../../img/main/icons/convert-mov.svg);
     height: 26px;
     cursor: pointer
 }
 
 .main-favicon.icon-convert-mp4-to-gif {
-    background-image: url(/img/main/icons/convert-gif.svg);
+    background-image: url(../../img/main/icons/convert-gif.svg);
     height: 26px;
     cursor: pointer
 }
 
 .main-favicon.icon-convert-mkv-to-mp4 {
-    background-image: url(/img/main/icons/convert-mkv.svg);
+    background-image: url(../../img/main/icons/convert-mkv.svg);
     height: 26px;
     cursor: pointer
 }
 
 .main-favicon.icon-convert-webm-to-mp4 {
-    background-image: url(/img/main/icons/convert-webm.svg);
+    background-image: url(../../img/main/icons/convert-webm.svg);
     height: 26px;
     cursor: pointer
 }
 
 .main-favicon.icon-youtube-transcript {
-    background-image: url(/img/main/icons/yt-transcript.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent));
+    background-image: url(../../img/main/icons/yt-transcript.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent));
     height: 26px;
     cursor: pointer
 }
 
 .main-favicon.icon-youtube-subtitles-download {
-    background-image: url(/img/main/icons/yt-subtitles.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent));
+    background-image: url(../../img/main/icons/yt-subtitles.svg), linear-gradient(90deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand) 20%, transparent) 48.96%, color-mix(in srgb, var(--brand) 20%, transparent));
     height: 26px;
     cursor: pointer
 }
@@ -2625,11 +2625,11 @@ table.news td ul {
 }
 
 .top-line {
-    background-image: url(/img/top_line_v2.png)
+    background-image: url(../../img/top_line_v2.png)
 }
 
 .top-line-2 {
-    background-image: url(/img/top_line_2_v2.png)
+    background-image: url(../../img/top_line_2_v2.png)
 }
 
 .article-1 {
@@ -2919,7 +2919,7 @@ h1.a-logo-yt b:first-child:before,
 h1.a-logo-yt strong:first-child:before,
 h2.a-logo-yt b:first-child:before,
 h2.a-logo-yt strong:first-child:before {
-    background-image: url(/img/articles/logos/yt_com.png)
+    background-image: url(../../img/articles/logos/yt_com.png)
 }
 
 ul.steps,
@@ -2973,7 +2973,7 @@ ul.steps-2 li {
 }
 
 .steps-2 .step:after {
-    background: url(/img/sprite_v2.png) -4px -325px no-repeat;
+    background: url(../../img/sprite_v2.png) -4px -325px no-repeat;
     content: "";
     display: block;
     position: absolute;
@@ -3007,7 +3007,7 @@ ul.steps-2 li {
 
 .slides .next,
 .slides .prev {
-    background-image: url(/img/slider_buttons.png);
+    background-image: url(../../img/slider_buttons.png);
     background-position: 0 0;
     background-repeat: no-repeat;
     display: block;
@@ -3055,7 +3055,7 @@ ul.steps-2 li {
 }
 
 .slides .pagination li a {
-    background-image: url(/img/slider_pagination.png);
+    background-image: url(../../img/slider_pagination.png);
     background-position: 0 0;
     background-repeat: no-repeat;
     display: block;
@@ -3192,7 +3192,7 @@ ul.steps-2 li {
 .download-btn-2 a,
 .download-btn a {
     color: #2b4f03;
-    background-image: url(/img/green-btn-bg.png);
+    background-image: url(../../img/green-btn-bg.png);
     background-position: 0 1px;
     background-repeat: repeat-x;
     display: inline-block;
@@ -3211,9 +3211,9 @@ ul.steps-2 li {
 .download-btn-2 a:before,
 .download-btn a:after,
 .download-btn a:before {
-    background-image: url(/img/green-btn-side.png);
-    background-image: -webkit-image-set(url("/img/green-btn-side.webp") type("image/webp"), url("/img/green-btn-side.png") type("image/png"));
-    background-image: image-set(url("/img/green-btn-side.webp") type("image/webp"), url("/img/green-btn-side.png") type("image/png"));
+    background-image: url(../../img/green-btn-side.png);
+    background-image: -webkit-image-set(url("../../img/green-btn-side.webp") type("image/webp"), url("../../img/green-btn-side.png") type("image/png"));
+    background-image: image-set(url("../../img/green-btn-side.webp") type("image/webp"), url("../../img/green-btn-side.png") type("image/png"));
     background-repeat: no-repeat;
     content: "";
     display: block;
@@ -3292,7 +3292,7 @@ ul.steps-2 li {
 
 .extension .info {
     color: #444;
-    background: #f5f5f5 url(/img/body_bg.gif?v=1) 0 0 repeat-x;
+    background: #f5f5f5 url(../../img/body_bg.gif?v=1) 0 0 repeat-x;
     border: 1px solid #d0d0d0;
     border-radius: 0 5px 5px 0;
     background-clip: padding-box;
@@ -3636,7 +3636,7 @@ ul.steps-2 li {
 
 .user-info .user .name {
     color: #006caa;
-    background: url(/img/room.png) no-repeat 0 -79px;
+    background: url(../../img/room.png) no-repeat 0 -79px;
     font-size: 27px;
     font-weight: 700;
     line-height: 30px
@@ -3657,7 +3657,7 @@ ul.steps-2 li {
 }
 
 .delete-history i {
-    background: url(/img/room.png) no-repeat 0 -54px;
+    background: url(../../img/room.png) no-repeat 0 -54px;
     position: absolute;
     top: 50%;
     left: 22px;
@@ -3680,7 +3680,7 @@ ul.steps-2 li {
 }
 
 #downloads_data td .source-link {
-    background: url(/img/room.png) no-repeat 0 -112px;
+    background: url(../../img/room.png) no-repeat 0 -112px;
     border: none;
     display: none;
     position: absolute;
@@ -3785,7 +3785,7 @@ ul.steps-2 li {
 }
 
 .package .active .value:before {
-    background: url(/img/room.png) no-repeat 0 -26px;
+    background: url(../../img/room.png) no-repeat 0 -26px;
     display: block;
     position: absolute;
     left: -25px;
@@ -4074,7 +4074,7 @@ ul.steps-2 li {
 }
 
 .ummy-link:after {
-    content: url(/img/ummy_icon_16.png);
+    content: url(../../img/ummy_icon_16.png);
     display: block;
     width: 16px;
     height: 16px;
@@ -4086,7 +4086,7 @@ ul.steps-2 li {
 }
 
 .ummy-link.wait:after {
-    content: url(/img/wait.gif)
+    content: url(../../img/wait.gif)
 }
 
 .ummy-info,
@@ -4422,7 +4422,7 @@ ul.steps-2 li {
     height: 52px;
     z-index: 100;
     transform: rotate(-15deg);
-    background-image: url(/img/main/arrow.svg);
+    background-image: url(../../img/main/arrow.svg);
     background-size: contain;
     background-repeat: no-repeat
 }
@@ -5032,7 +5032,7 @@ ul.steps-2 li {
 .dailymotion-page .google-button:before,
 .facebook-page .google-button:before {
     content: "";
-    background-image: url(/img/articles/dailymotion_com/chrome-icon.svg);
+    background-image: url(../../img/articles/dailymotion_com/chrome-icon.svg);
     background-position: 50%;
     background-repeat: no-repeat;
     width: 24px;
@@ -5062,7 +5062,7 @@ ul.steps-2 li {
 .dailymotion-page .l-android--item__download:before,
 .facebook-page .l-android--item__download:before {
     content: "";
-    background-image: url(/img/articles/dailymotion_com/l-android-download-icon.svg);
+    background-image: url(../../img/articles/dailymotion_com/l-android-download-icon.svg);
     background-position: 50%;
     background-repeat: no-repeat;
     width: 19px;
@@ -5076,7 +5076,7 @@ ul.steps-2 li {
 .dailymotion-page .l-android--item__watch:before,
 .facebook-page .l-android--item__watch:before {
     content: "";
-    background-image: url(/img/articles/dailymotion_com/l-android-watch-icon.svg);
+    background-image: url(../../img/articles/dailymotion_com/l-android-watch-icon.svg);
     background-position: 50%;
     background-repeat: no-repeat;
     width: 18px;
@@ -5090,7 +5090,7 @@ ul.steps-2 li {
 .dailymotion-page .l-android--item__media:before,
 .facebook-page .l-android--item__media:before {
     content: "";
-    background-image: url(/img/articles/dailymotion_com/l-android-media-icon.svg);
+    background-image: url(../../img/articles/dailymotion_com/l-android-media-icon.svg);
     background-position: 50%;
     background-repeat: no-repeat;
     width: 18px;
@@ -5104,7 +5104,7 @@ ul.steps-2 li {
 .dailymotion-page .l-android--item__manage:before,
 .facebook-page .l-android--item__manage:before {
     content: "";
-    background-image: url(/img/articles/dailymotion_com/l-android-manage-icon.svg);
+    background-image: url(../../img/articles/dailymotion_com/l-android-manage-icon.svg);
     background-position: 50%;
     background-repeat: no-repeat;
     width: 20px;
@@ -5118,7 +5118,7 @@ ul.steps-2 li {
 .dailymotion-page .l-android--item__music:before,
 .facebook-page .l-android--item__music:before {
     content: "";
-    background-image: url(/img/articles/dailymotion_com/l-android-music-icon.svg);
+    background-image: url(../../img/articles/dailymotion_com/l-android-music-icon.svg);
     background-position: 50%;
     background-repeat: no-repeat;
     width: 18px;
@@ -5132,7 +5132,7 @@ ul.steps-2 li {
 .dailymotion-page .l-android--item__share:before,
 .facebook-page .l-android--item__share:before {
     content: "";
-    background-image: url(/img/articles/dailymotion_com/l-android-share-icon.svg);
+    background-image: url(../../img/articles/dailymotion_com/l-android-share-icon.svg);
     background-position: 50%;
     background-repeat: no-repeat;
     width: 18px;
@@ -5433,7 +5433,7 @@ ul.steps-2 li {
 }
 
 .t-sf-logo:before {
-    background: url(/img/logos/sf-logo-icon_31x31.svg) 0 0 no-repeat;
+    background: url(../../img/logos/sf-logo-icon_31x31.svg) 0 0 no-repeat;
     display: block;
     width: 31px;
     height: 31px;
@@ -6077,7 +6077,7 @@ ul.steps-2 li {
 }
 
 .menu-btn {
-    background: url(/img/menu.svg?v=1) no-repeat 50%;
+    background: url(../../img/menu.svg?v=1) no-repeat 50%;
     display: none;
     position: absolute;
     top: 50%;
@@ -6185,7 +6185,7 @@ a.button2_theme_green:visited {
 .ext-advice__icon {
     width: 49px;
     height: 73px;
-    background: url(/img/ext-advice/ext-advice__icon.png) no-repeat 50%
+    background: url(../../img/ext-advice/ext-advice__icon.png) no-repeat 50%
 }
 
 .ext-advice__icon,
@@ -6206,7 +6206,7 @@ a.button2_theme_green:visited {
 
 .ext-advice__icon-yabro {
     display: inline-block;
-    background: url(/img/ext-advice/ext-advice__icon-yabro.png) no-repeat 50%;
+    background: url(../../img/ext-advice/ext-advice__icon-yabro.png) no-repeat 50%;
     width: 22px;
     height: 22px;
     margin: 0 5px
@@ -6254,7 +6254,7 @@ a.button2_theme_green:visited {
 
 .downloader-2 .link-form .submit {
     color: #c7c7c7;
-    background: url(/img/arrows_v3.png) no-repeat #fff;
+    background: url(../../img/arrows_v3.png) no-repeat #fff;
     background-position: 50% 6px;
     border: 1px solid #dadada;
     outline: none;
@@ -6335,7 +6335,7 @@ a.button2_theme_green:visited {
 }
 
 .downloader-2 .tarea-wrap .btn:before {
-    content: url(/img/sprite_v2.png);
+    content: url(../../img/sprite_v2.png);
     position: absolute;
     top: -65px;
     left: 9px;
@@ -6527,7 +6527,7 @@ a.button2_theme_green:visited {
 }
 
 .downloader-2 .result-box.attempt {
-    background: url(/img/bg_diagonals.png)
+    background: url(../../img/bg_diagonals.png)
 }
 
 .downloader-2 .result-box.attempt-success {
@@ -6602,7 +6602,7 @@ html:not(.touch) .downloader-2 .result-box.unsupported {
 }
 
 .downloader-2 .result-box .thumb-box .play-btn {
-    background: url(/img/media_btn.png) 0 0 no-repeat;
+    background: url(../../img/media_btn.png) 0 0 no-repeat;
     display: block;
     position: absolute;
     left: 50%;
@@ -6639,7 +6639,7 @@ html:not(.touch) .downloader-2 .result-box.unsupported {
 }
 
 .downloader-2 .result-box .thumb-box.empty .clip {
-    background: url(/img/video-thumb.png) 50% 50% no-repeat
+    background: url(../../img/video-thumb.png) 50% 50% no-repeat
 }
 
 .downloader-2 .result-box .info-box {
@@ -6756,7 +6756,7 @@ html:not(.touch) .downloader-2 .result-box.unsupported {
 
 .downloader-2 .result-box .link-box .drop-down-box .def-btn-name:after {
     content: "";
-    background-image: url(/img/arrows_v3.png);
+    background-image: url(../../img/arrows_v3.png);
     background-position: 50% -126px;
     background-repeat: no-repeat;
     display: block;
@@ -6861,7 +6861,7 @@ html:not(.touch) .downloader-2 .result-box.unsupported {
 
 .downloader-2 .result-box .link-box .more-links a:after {
     content: "";
-    background-image: url(/img/arrows_v3.png);
+    background-image: url(../../img/arrows_v3.png);
     background-position: 50% -126px;
     background-repeat: no-repeat;
     display: block;
@@ -6934,7 +6934,7 @@ html:not(.touch) .downloader-2 .result-box.unsupported {
 }
 
 .downloader-2 .result-box .link-box .list .link.no-audio .subname {
-    background-image: url(/img/no_audio_red.png);
+    background-image: url(../../img/no_audio_red.png);
     background-position: 0 50%;
     background-repeat: no-repeat;
     padding-left: 20px
@@ -6950,7 +6950,7 @@ html:not(.touch) .downloader-2 .result-box.unsupported {
     width: 18px;
     height: 18px;
     margin-top: -9px;
-    background: url(/img/sprite_v2.png) no-repeat 0 -107px
+    background: url(../../img/sprite_v2.png) no-repeat 0 -107px
 }
 
 .downloader-2 .result-box .link-box .list .link:hover i,
@@ -6963,7 +6963,7 @@ html:not(.touch) .downloader-2 .result-box.unsupported {
 }
 
 .downloader-2 .result-box .link-box .list .link.qm i {
-    background: url(/img/sprite_v2.png) no-repeat 0 -177px;
+    background: url(../../img/sprite_v2.png) no-repeat 0 -177px;
     display: block;
     opacity: .6
 }
@@ -7073,7 +7073,7 @@ html:not(.touch) .downloader-2 .result-box.unsupported {
 
 .result-box.audio .thumb-box .clip,
 .result-box.audio .thumb-box.empty .clip {
-    background: #f9f9f9 url(/img/audio-thumb.png) 50% 50% no-repeat
+    background: #f9f9f9 url(../../img/audio-thumb.png) 50% 50% no-repeat
 }
 
 .result-box.audio .thumb-box .audio-player-box {
@@ -7149,7 +7149,7 @@ html:not(.touch) .downloader-2 .result-box.unsupported {
     background-color: #f9f9f9;
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    background-image: url(/img/file-thumb.png);
+    background-image: url(../../img/file-thumb.png);
     border: 1px solid #dadada;
     border-right-color: #e3e3e3;
     width: 270px;
@@ -7157,11 +7157,11 @@ html:not(.touch) .downloader-2 .result-box.unsupported {
 }
 
 .result-box.file .thumb-box.filefactory_com {
-    background-image: url(/img/favicons/thumb/filefactory_com.png)
+    background-image: url(../../img/favicons/thumb/filefactory_com.png)
 }
 
 .result-box.file .thumb-box.sendspace_com {
-    background-image: url(/img/favicons/thumb/sendspace_com.png)
+    background-image: url(../../img/favicons/thumb/sendspace_com.png)
 }
 
 .result-box.file .link-box .def-btn-box {
@@ -7267,7 +7267,7 @@ html:not(.touch) .downloader-2 .result-box.unsupported {
 }
 
 .downloader-2 .ummy-link:after {
-    content: url(/img/ummy_icon_16.png);
+    content: url(../../img/ummy_icon_16.png);
     display: block;
     width: 16px;
     height: 16px;
@@ -7280,7 +7280,7 @@ html:not(.touch) .downloader-2 .result-box.unsupported {
 }
 
 .downloader-2 .ummy-link.wait:after {
-    content: url(/img/wait.gif)
+    content: url(../../img/wait.gif)
 }
 
 .downloader-2 .second-btn-box .ummy-link {
@@ -7363,7 +7363,7 @@ html:not(.touch) .downloader-2 .result-box.unsupported {
 }
 
 .downloader-2 .promo .icon {
-    background: url(/img/extension/icon_new_174_2.png) 50% 50% no-repeat;
+    background: url(../../img/extension/icon_new_174_2.png) 50% 50% no-repeat;
     float: left;
     width: 174px;
     height: 160px;
@@ -7418,11 +7418,11 @@ html:not(.touch) .downloader-2 .result-box.unsupported {
 }
 
 .downloader-2 .promo.uvd .icon {
-    background-image: url(/img/uvd/icon_174_2.png)
+    background-image: url(../../img/uvd/icon_174_2.png)
 }
 
 .downloader-2 .promo.vdp .icon {
-    background-image: url(/img/vdp/icon_72.png);
+    background-image: url(../../img/vdp/icon_72.png);
     height: 100px
 }
 
@@ -7454,7 +7454,7 @@ html:not(.touch) .downloader-2 .promo.vdp.unsupported:before {
     top: -10px;
     width: 57px;
     height: 71px;
-    background: url(/img/download-result/arrow_view_extra.png) no-repeat 50% 50%
+    background: url(../../img/download-result/arrow_view_extra.png) no-repeat 50% 50%
 }
 
 html:not(.touch) .downloader-2 .promo.vdp.unsupported .icon {
@@ -7470,12 +7470,12 @@ html:not(.touch) .downloader-2 .promo.vdp.unsupported .text {
 }
 
 .downloader-2 .promo.tz {
-    background: #fff url(/img/televzr/get-tz-app-bg.png) no-repeat 0 0;
+    background: #fff url(../../img/televzr/get-tz-app-bg.png) no-repeat 0 0;
     border: none
 }
 
 .downloader-2 .promo.tz .icon {
-    background-image: url(/img/televzr/get-tz-app-icon-tz.svg)
+    background-image: url(../../img/televzr/get-tz-app-icon-tz.svg)
 }
 
 html:not(.touch) .downloader-2 .promo.tz.unsupported {
@@ -7491,7 +7491,7 @@ html:not(.touch) .downloader-2 .promo.tz.unsupported:before {
     top: -14px;
     width: 24px;
     height: 46px;
-    background: url(/img/televzr/arrow_view_extra-tz.svg) 50% 50% no-repeat
+    background: url(../../img/televzr/arrow_view_extra-tz.svg) 50% 50% no-repeat
 }
 
 html:not(.touch) .downloader-2 .promo.tz.unsupported .icon {
@@ -8157,13 +8157,13 @@ html:not(.touch).ru .downloader-2 .promo.tz.unsupported .text-tz-block-text {
         padding-right: 4%
     }
     .downloader-2 .promo .icon {
-        background-image: url(/img/extension/icon_new_100.png);
+        background-image: url(../../img/extension/icon_new_100.png);
         width: 100px;
         height: 100px;
         margin-right: -100px
     }
     .downloader-2 .promo.uvd .icon {
-        background-image: url(/img/uvd/icon_100.png)
+        background-image: url(../../img/uvd/icon_100.png)
     }
     .downloader-2 .promo .text {
         max-width: 75%
@@ -8473,7 +8473,7 @@ html:not(.touch).ru .downloader-2 .promo.tz.unsupported .text-tz-block-text {
         padding-right: 2%
     }
     .downloader-2 .promo .icon {
-        background-image: url(/img/extension/icon_new_64.png);
+        background-image: url(../../img/extension/icon_new_64.png);
         width: 64px;
         height: 64px;
         margin-right: -64px;
@@ -8481,7 +8481,7 @@ html:not(.touch).ru .downloader-2 .promo.tz.unsupported .text-tz-block-text {
         padding-bottom: 18px
     }
     .downloader-2 .promo.uvd .icon {
-        background-image: url(/img/uvd/icon_64.png)
+        background-image: url(../../img/uvd/icon_64.png)
     }
     .downloader-2 .promo .text {
         max-width: 80%
@@ -8796,19 +8796,19 @@ html:not(.touch).ru .downloader-2 .promo.tz.unsupported .text-tz-block-text {
         background-image: none
     }
     .downloader-2 .result-box.file .thumb-box {
-        background-image: url(/img/file-thumb-32.png)
+        background-image: url(../../img/file-thumb-32.png)
     }
     .downloader-2 .result-box.file .thumb-box.filefactory_com {
-        background-image: url(/img/favicons/thumb/32/filefactory_com.png)
+        background-image: url(../../img/favicons/thumb/32/filefactory_com.png)
     }
     .downloader-2 .result-box.file .thumb-box.sendspace_com {
-        background-image: url(/img/favicons/thumb/32/sendspace_com.png)
+        background-image: url(../../img/favicons/thumb/32/sendspace_com.png)
     }
     .downloader-2 .extra {
         padding: 10px
     }
     .downloader-2 .promo .icon {
-        background-image: url(/img/extension/icon_new_32.png);
+        background-image: url(../../img/extension/icon_new_32.png);
         width: 32px;
         height: 32px;
         margin-right: -32px;
@@ -8816,7 +8816,7 @@ html:not(.touch).ru .downloader-2 .promo.tz.unsupported .text-tz-block-text {
         padding-bottom: 16px
     }
     .downloader-2 .promo.uvd .icon {
-        background-image: url(/img/uvd/icon_32.png)
+        background-image: url(../../img/uvd/icon_32.png)
     }
     .downloader-2 .promo .text {
         max-width: 85%
@@ -8997,7 +8997,7 @@ html:not(.touch).ru .downloader-2 .promo.tz.unsupported .text-tz-block-text {
 
 .downloader-container .downloader-2 .link-form .submit:before {
     content: "";
-    background: url(/img/arrow-right-new.png) no-repeat;
+    background: url(../../img/arrow-right-new.png) no-repeat;
     width: 14px;
     height: 21px;
     background-size: cover;
@@ -9255,7 +9255,7 @@ html.ja .downloader-span-or {
 
 .yt-article_screenshot-box .yt-article_screenshot-text {
     color: #fff;
-    background: url(/img/sf-helper-round.png) 0 0 no-repeat;
+    background: url(../../img/sf-helper-round.png) 0 0 no-repeat;
     position: absolute;
     width: 229px;
     height: 229px;
@@ -9672,7 +9672,7 @@ html.ja .downloader-span-or {
 
 .list__arrow-right li:before {
     content: "";
-    background: url(/img/right-arrow.svg) 50% no-repeat;
+    background: url(../../img/right-arrow.svg) 50% no-repeat;
     position: relative;
     height: 13px;
     display: inline-block;
@@ -9902,7 +9902,7 @@ html.ja .downloader-span-or {
     transform: translateY(-50%);
     width: 1em;
     height: 1em;
-    background: url(/img/link-external.svg) no-repeat 0 0;
+    background: url(../../img/link-external.svg) no-repeat 0 0;
     background-size: 100% 100%
 }
 
@@ -10033,7 +10033,7 @@ body.page #main {
 .logo2 {
     text-decoration: none;
     display: inline-block;
-    background: url(/img/logo_small3.png?v=1) 50% 50% no-repeat;
+    background: url(../../img/logo_small3.png?v=1) 50% 50% no-repeat;
     background-size: 167px 40px;
     width: 167px;
     height: 40px;
@@ -10042,7 +10042,7 @@ body.page #main {
 }
 
 html.svg .logo2 {
-    background: url(/img/logo_small2.svg) 50% 50% no-repeat
+    background: url(../../img/logo_small2.svg) 50% 50% no-repeat
 }
 
 .user2 .promo {
@@ -10080,18 +10080,18 @@ html.svg .logo2 {
     top: 25px;
     width: 100%;
     height: 482px;
-    background-image: url(/img/promo_en.png);
+    background-image: url(../../img/promo_en.png);
     background-repeat: no-repeat;
     background-position: 0 100%
 }
 
 html[lang=ru] .user2 .promo__content:after,
 html[lang=uk] .user2 .promo__content:after {
-    background-image: url(/img/promo_ru.png)
+    background-image: url(../../img/promo_ru.png)
 }
 
 html[lang=ar] .user2 .promo__content:after {
-    background-image: url(/img/promo_ar.png)
+    background-image: url(../../img/promo_ar.png)
 }
 
 .user2 .promo__content .last-version {
@@ -10114,7 +10114,7 @@ html[lang=ar] .user2 .promo__content:after {
     content: "";
     width: 27px;
     height: 25px;
-    background: url(/img/extension/icon_32.png) 50% 50% no-repeat;
+    background: url(../../img/extension/icon_32.png) 50% 50% no-repeat;
     background-size: 100% 100%;
     position: absolute;
     left: 4px;
@@ -10231,7 +10231,7 @@ html[lang=ar] .user2 .promo__content:after {
     content: "";
     width: 24px;
     height: 24px;
-    background: url(/img/install-btn-white.png) 100% 50% no-repeat;
+    background: url(../../img/install-btn-white.png) 100% 50% no-repeat;
     display: table-cell;
     vertical-align: middle;
     padding-left: 10px
@@ -10280,39 +10280,39 @@ html[lang=ar] .user2 .promo__content:after {
 
 .browser_type_chrome:before,
 .browser_type_google:before {
-    background-image: url(/img/browser/chrome.png)
+    background-image: url(../../img/browser/chrome.png)
 }
 
 .browser_type_chromium:before {
-    background-image: url(/img/browser/chromium.png)
+    background-image: url(../../img/browser/chromium.png)
 }
 
 .browser_type_firefox:before {
-    background-image: url(/img/browser/firefox.png)
+    background-image: url(../../img/browser/firefox.png)
 }
 
 .browser_type_opera:before {
-    background-image: url(/img/browser/opera_v2.png)
+    background-image: url(../../img/browser/opera_v2.png)
 }
 
 .browser_type_opera_webkit:before {
-    background-image: url(/img/browser/opera_webkit.png)
+    background-image: url(../../img/browser/opera_webkit.png)
 }
 
 .browser_type_safari:before {
-    background-image: url(/img/browser/safari.png)
+    background-image: url(../../img/browser/safari.png)
 }
 
 .browser_type_yandex:before {
-    background-image: url(/img/browser/yandex.png)
+    background-image: url(../../img/browser/yandex.png)
 }
 
 .browser_type_edge_chromium:before {
-    background-image: url(/img/browser/edge-chromium.png)
+    background-image: url(../../img/browser/edge-chromium.png)
 }
 
 .os_type_os_windows:before {
-    background-image: url(/img/os/windows.png)
+    background-image: url(../../img/os/windows.png)
 }
 
 .antivirus {
@@ -10538,7 +10538,7 @@ body .feature2 h4 {
     top: -1px;
     width: 24px;
     height: 27px;
-    background: url(/img/browser/user-js.png) 0 50% no-repeat
+    background: url(../../img/browser/user-js.png) 0 50% no-repeat
 }
 
 .footer2 {
@@ -10771,7 +10771,7 @@ h2.chameleon__subtitle {
     content: "";
     width: 64px;
     height: 62px;
-    background: url(/img/extension/icon_64_2.png) no-repeat 50% 50%;
+    background: url(../../img/extension/icon_64_2.png) no-repeat 50% 50%;
     position: absolute;
     left: -80px;
     top: 50%;
@@ -11469,7 +11469,7 @@ h4.chameleon-item__title {
     z-index: 3;
     width: 43px;
     height: 42px;
-    background: url(/img/android/hand.png) 0 0 no-repeat;
+    background: url(../../img/android/hand.png) 0 0 no-repeat;
     background-size: contain
 }
 
@@ -13004,7 +13004,7 @@ h4.chameleon-item__title {
     top: 3px;
     width: 20px;
     height: 20px;
-    background: url(/img/articles/benefit/check.svg) no-repeat 50%/contain
+    background: url(../../img/articles/benefit/check.svg) no-repeat 50%/contain
 }
 
 .pinterest-page .b-instruction {
@@ -13044,7 +13044,7 @@ h4.chameleon-item__title {
     top: 3px;
     width: 20px;
     height: 20px;
-    background: url(/img/articles/benefit/star.svg) no-repeat 50%/contain
+    background: url(../../img/articles/benefit/star.svg) no-repeat 50%/contain
 }
 
 .pinterest-page .other-services .main-favicon {
@@ -13053,31 +13053,31 @@ h4.chameleon-item__title {
 }
 
 .pinterest-page .icon-pinterest_com {
-    background-image: url(/img/main/icons/pinterest.svg)
+    background-image: url(../../img/main/icons/pinterest.svg)
 }
 
 .pinterest-page .other-services .icon-facebook_com {
-    background-image: url(/img/main/icons/facebook.svg)
+    background-image: url(../../img/main/icons/facebook.svg)
 }
 
 .pinterest-page .other-services .icon-instagram_com {
-    background-image: url(/img/main/icons/instagram.svg)
+    background-image: url(../../img/main/icons/instagram.svg)
 }
 
 .pinterest-page .other-services .icon-tiktok_com {
-    background-image: url(/img/main/icons/tiktok.svg)
+    background-image: url(../../img/main/icons/tiktok.svg)
 }
 
 .pinterest-page .other-services .icon-twitter_com {
-    background-image: url(/img/main/icons/twitter.svg)
+    background-image: url(../../img/main/icons/twitter.svg)
 }
 
 .pinterest-page .other-services .icon-youtube_com {
-    background-image: url(/img/main/icons/youtube.svg)
+    background-image: url(../../img/main/icons/youtube.svg)
 }
 
 .pinterest-page .other-services .icon-mov {
-    background-image: url(/img/main/icons/mov.svg)
+    background-image: url(../../img/main/icons/mov.svg)
 }
 
 .pinterest-page .sf_faq {

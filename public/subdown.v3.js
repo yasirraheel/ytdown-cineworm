@@ -1,6 +1,8 @@
 // SubDown — OUR OWN backend. Template design is the exact SaveFrom
 // capture the user sent; only the backend is ours (no SaveFrom API).
 (function () {
+  var APP_BASE = String(window.CINEGRAB_BASE_PATH || '').replace(/\/+$/, '');
+  function appUrl(path) { return APP_BASE + path; }
   // Mobile menu first: hamburger toggles the header nav. Wired here,
   // at the top, so it works even if later code in this file throws.
   var menuBtn = document.querySelector('.menu-btn');
@@ -81,7 +83,7 @@
     if (!row) return;
     var stEl = row.querySelector('.sd-qstatus'), actEl = row.querySelector('.sd-qact');
     try {
-      var pr = await fetch('/api/jobs/' + e.jobId, { cache: 'no-store' });
+      var pr = await fetch(appUrl('/api/jobs/' + e.jobId), { cache: 'no-store' });
       // A 404 can be a stale cached answer right after the job was
       // recreated (same id), or a short server hiccup: retry like any
       // other failure instead of declaring it expired at once.
@@ -89,7 +91,7 @@
       var j = await pr.json();
       if (j.status === 'ready') {
         stEl.textContent = 'Ready - ' + Math.round((j.size || 0) / 1048576 * 10) / 10 + ' MB';
-        actEl.innerHTML = '<a class="sd-dl" style="margin-top:0;padding:9px 18px;font-size:14px" href="/api/jobs/' + j.jobId + '/file">Download</a>';
+        actEl.innerHTML = '<a class="sd-dl" style="margin-top:0;padding:9px 18px;font-size:14px" href="' + appUrl('/api/jobs/' + j.jobId + '/file') + '">Download</a>';
       } else if (j.status === 'error') {
         stEl.textContent = 'Interrupted';
         actEl.innerHTML = '<button type="button" class="sd-mp3" style="padding:9px 14px;font-size:14px" data-retry="' + esc(e.jobId) + '">Download again</button>';
@@ -131,7 +133,7 @@
   function stopPoll(jobId){ if (timers[jobId]) { clearInterval(timers[jobId]); delete timers[jobId]; } }
   async function cancelJob(jobId){
     stopPoll(jobId);
-    try { await fetch('/api/jobs/' + jobId, { method: 'DELETE' }); } catch (e) {}
+    try { await fetch(appUrl('/api/jobs/' + jobId), { method: 'DELETE' }); } catch (e) {}
     saveQueue(loadQueue().filter(function (x) { return x.jobId !== jobId; }));
     renderQueue();
   }
@@ -208,7 +210,7 @@
   // Covers load through our server (/api/thumb): some thumbnail CDNs
   // are blocked in the user's country, so the browser would show no
   // preview even though the video itself downloads fine.
-  function thumbSrc(thumb, page){ if (!thumb) return ''; return '/api/thumb?url=' + encodeURIComponent(thumb) + (page ? '&page=' + encodeURIComponent(page) : ''); }
+  function thumbSrc(thumb, page){ if (!thumb) return ''; return appUrl('/api/thumb?url=' + encodeURIComponent(thumb) + (page ? '&page=' + encodeURIComponent(page) : '')); }
   function show(html){ result.innerHTML = html; }
   function errorBox(msg){
     show('<div class="sd-error">' +
@@ -238,7 +240,7 @@
     loadingBox();
     var info;
     try {
-      var r = await fetch('/api/info', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ url: url }) });
+      var r = await fetch(appUrl('/api/info'), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ url: url }) });
       info = await r.json();
       if (!r.ok) throw new Error(info.error || 'Could not check this link.');
     } catch (err) { errorBox(err.message); return; }
@@ -261,7 +263,7 @@
         stEl.innerHTML = '<div class="sd-status"><span class="sd-spin"></span><span>Preparing your download, please wait...</span></div>';
         var job;
         try {
-          var jr = await fetch('/api/jobs', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ url: url, quality: b.getAttribute('data-q') }) });
+          var jr = await fetch(appUrl('/api/jobs'), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ url: url, quality: b.getAttribute('data-q') }) });
           job = await jr.json();
           if (!jr.ok) throw new Error(job.error || 'Download failed to start.');
           addToQueue({ jobId: job.jobId, url: url, title: info.title || 'Video', thumbnail: info.thumbnail || '', quality: b.getAttribute('data-q'), createdAt: Date.now() });
@@ -269,7 +271,7 @@
         var fails = 0;
         timers[job.jobId] = setInterval(async function () {
           try {
-            var pr = await fetch('/api/jobs/' + job.jobId, { cache: 'no-store' });
+            var pr = await fetch(appUrl('/api/jobs/' + job.jobId), { cache: 'no-store' });
             if (!pr.ok) {
               // One bad poll must not kill the download: the server keeps
               // it running. A 404 right after a recreate can also be a
@@ -287,7 +289,7 @@
               stopPoll(job.jobId);
               var mb = Math.round((j.size || 0) / 1048576 * 10) / 10;
               var dlLabel = window.innerWidth <= 600 ? 'Download (' + mb + ' MB)' : 'Download ' + esc(j.name || 'video') + ' (' + mb + ' MB)';
-              stEl.innerHTML = '<a class="sd-dl" href="/api/jobs/' + j.jobId + '/file">' + dlLabel + '</a>' + (window.innerWidth <= 600 ? '<div style="font-size:12px;color:#777;margin-top:6px;overflow-wrap:anywhere">' + esc(j.name || '') + '</div>' : '');
+              stEl.innerHTML = '<a class="sd-dl" href="' + appUrl('/api/jobs/' + j.jobId + '/file') + '">' + dlLabel + '</a>' + (window.innerWidth <= 600 ? '<div style="font-size:12px;color:#777;margin-top:6px;overflow-wrap:anywhere">' + esc(j.name || '') + '</div>' : '');
               renderQueue();
             } else if (j.status === 'error') {
               stopPoll(job.jobId);

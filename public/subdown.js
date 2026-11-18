@@ -1,6 +1,8 @@
 // SubDown — OUR OWN backend. Template design is the exact SaveFrom
 // capture the user sent; only the backend is ours (no SaveFrom API).
 (function () {
+  var APP_BASE = String(window.CINEGRAB_BASE_PATH || '').replace(/\/+$/, '');
+  function appUrl(path) { return APP_BASE + path; }
   var form = document.getElementById('sf_form');
   var input = document.getElementById('sf_url');
   var result = document.getElementById('sf_result');
@@ -24,7 +26,7 @@
     statusBox('Checking the video, please wait...');
     var info;
     try {
-      var r = await fetch('/api/info', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ url: url }) });
+      var r = await fetch(appUrl('/api/info'), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ url: url }) });
       info = await r.json();
       if (!r.ok) throw new Error(info.error || 'Could not check this link.');
     } catch (err) { errorBox(err.message); return; }
@@ -46,17 +48,17 @@
         st.textContent = 'Downloading on the server, please wait...';
         var job;
         try {
-          var jr = await fetch('/api/jobs', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ url: url, quality: b.getAttribute('data-q') }) });
+          var jr = await fetch(appUrl('/api/jobs'), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ url: url, quality: b.getAttribute('data-q') }) });
           job = await jr.json();
           if (!jr.ok) throw new Error(job.error || 'Download failed to start.');
         } catch (err) { errorBox(err.message); return; }
         var timer = setInterval(async function () {
           try {
-            var pr = await fetch('/api/jobs/' + job.jobId);
+            var pr = await fetch(appUrl('/api/jobs/' + job.jobId));
             var j = await pr.json();
             if (j.status === 'ready') {
               clearInterval(timer);
-              st.innerHTML = '<a href="/api/jobs/' + j.jobId + '/file" style="font-weight:bold">Download ' + esc(j.name || 'video') + ' (' + Math.round((j.size || 0) / 1048576 * 10) / 10 + ' MB)</a>';
+              st.innerHTML = '<a href="' + appUrl('/api/jobs/' + j.jobId + '/file') + '" style="font-weight:bold">Download ' + esc(j.name || 'video') + ' (' + Math.round((j.size || 0) / 1048576 * 10) / 10 + ' MB)</a>';
             } else if (j.status === 'error') {
               clearInterval(timer);
               errorBox(j.error || 'Download failed.');

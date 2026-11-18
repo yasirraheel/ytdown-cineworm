@@ -24,6 +24,49 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const publicDir = path.join(root, 'public');
+function normalizeBasePath(value) {
+  const raw = String(value || '').trim();
+  if (!raw || raw === '/') return '';
+  const withSlash = raw.startsWith('/') ? raw : `/${raw}`;
+  return withSlash.replace(/\/+$/, '');
+}
+const BASE_PATH = normalizeBasePath(process.env.BASE_PATH);
+function appPath(pathname) {
+  if (!BASE_PATH) return pathname || '/';
+  const p = pathname || '/';
+  return `${BASE_PATH}${p === '/' ? '/' : p.startsWith('/') ? p : `/${p}`}`;
+}
+function stripBasePath(pathname) {
+  const p = pathname || '/';
+  if (!BASE_PATH) return p;
+  if (p === BASE_PATH || p === `${BASE_PATH}/`) return '/';
+  if (p.startsWith(`${BASE_PATH}/`)) return p.slice(BASE_PATH.length) || '/';
+  return p;
+}
+function rewriteHtmlForBase(html) {
+  if (!BASE_PATH) return html;
+  return html
+    .replaceAll('https://ytdown.cineworm.org', `https://cineworm.org${BASE_PATH}`)
+    .replace(/(\b(?:href|src|action|poster|content)=['"])\/(?![\/#])/gi, `$1${BASE_PATH}/`)
+    .replace(/(url\(\s*)\/(?![\/#])/gi, `$1${BASE_PATH}/`)
+    .replace(/<head(\s[^>]*)?>/i, `$&<script>window.CINEGRAB_BASE_PATH=${JSON.stringify(BASE_PATH)};</script>`);
+}
+function sendStaticFile(res, file, headers, status = 200) {
+  if (BASE_PATH && path.extname(file).toLowerCase() === '.html') {
+    fs.readFile(file, 'utf8', (err, html) => {
+      if (err) {
+        res.writeHead(404, { 'Content-Type': mime['.html'] });
+        res.end('Not found');
+        return;
+      }
+      res.writeHead(status, headers);
+      res.end(rewriteHtmlForBase(html));
+    });
+    return;
+  }
+  res.writeHead(status, headers);
+  fs.createReadStream(file).pipe(res);
+}
 // Job files live in the app folder by default so it works on shared
 // hosting where /tmp may be restricted. Override with JOBS_DIR.
 const jobsDir = process.env.JOBS_DIR || path.join(root, '.jobs');
@@ -999,31 +1042,32 @@ setInterval(() => {
 const server = http.createServer(async (req, res) => {
   try {
     const u = new URL(req.url, `http://${req.headers.host}`);
-    // www -> non-www (SEO: one canonical host; only ytdown.cineworm.org,
-    // the downsub host keeps serving as-is).
-    if (req.headers.host === 'www.ytdown.cineworm.org') {
+    // Keep the legacy subdomain redirect, but never redirect the main-domain
+    // /cinegrab mount back to the old subdomain.
+    if (!BASE_PATH && req.headers.host === 'www.ytdown.cineworm.org') {
       res.writeHead(301, { Location: 'https://ytdown.cineworm.org' + u.pathname + u.search }); res.end(); return;
     }
-    if (req.method === 'GET' && (u.pathname === '/' || u.pathname === '/index.html')) {
-      res.writeHead(200, { 'Content-Type': mime['.html'], 'Cache-Control': 'no-cache, must-revalidate' }); fs.createReadStream(path.join(publicDir, 'index.html')).pipe(res); return;
+    const requestPath = stripBasePath(u.pathname);
+    if (req.method === 'GET' && (requestPath === '/' || requestPath === '/index.html')) {
+      sendStaticFile(res, path.join(publicDir, 'index.html'), { 'Content-Type': mime['.html'], 'Cache-Control': 'no-cache, must-revalidate' }); return;
     }
-    if (req.method === 'GET' && (u.pathname === '/terms' || u.pathname === '/privacy')) {
-      const f = path.join(publicDir, u.pathname.slice(1) + '.html');
-      res.writeHead(200, { 'Content-Type': mime['.html'], 'Cache-Control': 'no-cache, must-revalidate' }); fs.createReadStream(f).pipe(res); return;
+    if (req.method === 'GET' && (requestPath === '/terms' || requestPath === '/privacy')) {
+      const f = path.join(publicDir, requestPath.slice(1) + '.html');
+      sendStaticFile(res, f, { 'Content-Type': mime['.html'], 'Cache-Control': 'no-cache, must-revalidate' }); return;
     }
-    if (req.method === 'GET' && !u.pathname.startsWith('/api/')) {
+    if (req.method === 'GET' && !requestPath.startsWith('/api/')) {
       // Static assets from public/ (exact template design: /build, /img, /font, /js, /subdown.js)
-      const rel = u.pathname === '/' || u.pathname === '/index.html' ? 'index.html' : u.pathname.replace(/^\/+/, '');
+      const rel = requestPath === '/' || requestPath === '/index.html' ? 'index.html' : requestPath.replace(/^\/+/, '');
       let f = path.resolve(publicDir, rel);
       if (!f.startsWith(publicDir) || !fs.existsSync(f)) {
         // Unknown page: a real branded 404 (SEO: no more soft-404 homepage).
-        res.writeHead(404, { 'Content-Type': mime['.html'], 'Cache-Control': 'no-cache, must-revalidate' }); fs.createReadStream(path.join(publicDir, '404.html')).pipe(res); return;
+        sendStaticFile(res, path.join(publicDir, '404.html'), { 'Content-Type': mime['.html'], 'Cache-Control': 'no-cache, must-revalidate' }, 404); return;
       }
       if (fs.statSync(f).isDirectory()) {
         // /youtube-video-downloader -> /youtube-video-downloader/ (canonical trailing slash)
-        if (!u.pathname.endsWith('/')) { res.writeHead(301, { Location: u.pathname + '/' + u.search }); res.end(); return; }
+        if (!requestPath.endsWith('/')) { res.writeHead(301, { Location: appPath(requestPath + '/') + u.search }); res.end(); return; }
         f = path.join(f, 'index.html');
-        if (!fs.existsSync(f)) { res.writeHead(404, { 'Content-Type': mime['.html'], 'Cache-Control': 'no-cache, must-revalidate' }); fs.createReadStream(path.join(publicDir, '404.html')).pipe(res); return; }
+        if (!fs.existsSync(f)) { sendStaticFile(res, path.join(publicDir, '404.html'), { 'Content-Type': mime['.html'], 'Cache-Control': 'no-cache, must-revalidate' }, 404); return; }
       }
       const headers = { 'Content-Type': mime[path.extname(f)] || 'application/octet-stream' };
       // Versioned assets (?v=) are immutable: the ?v= bump rule guarantees
@@ -1031,15 +1075,15 @@ const server = http.createServer(async (req, res) => {
       // Unversioned HTML/JS/CSS stay no-cache.
       if (/\.(js|css)$/.test(f) && u.searchParams.has('v')) headers['Cache-Control'] = 'public, max-age=31536000, immutable';
       else if (/\.(js|css|html)$/.test(f)) headers['Cache-Control'] = 'no-cache, must-revalidate';
-      res.writeHead(200, headers); fs.createReadStream(f).pipe(res); return;
+      sendStaticFile(res, f, headers); return;
     }
-    if (req.method === 'POST' && u.pathname === '/') {
+    if (req.method === 'POST' && requestPath === '/') {
       // A native form submit (JS off) lands here. Redirect (303) to a
       // plain GET so a later refresh never shows Chrome's
       // "Confirm Form Resubmission" dialog.
-      res.writeHead(303, { Location: '/' }); res.end(); return;
+      res.writeHead(303, { Location: appPath('/') }); res.end(); return;
     }
-    if (req.method === 'POST' && u.pathname === '/api/info') {
+    if (req.method === 'POST' && requestPath === '/api/info') {
       const { url } = JSON.parse(await readBody(req) || '{}');
       if (!url || !validUrl(url)) return sendJson(res, 400, { error: 'Paste a valid http(s) video link.' });
       if (isDirectMedia(url)) {
@@ -1118,15 +1162,15 @@ const server = http.createServer(async (req, res) => {
       return;
     }
     // Job-based download (Hostinger-safe)
-    if (req.method === 'POST' && u.pathname === '/api/jobs') {
+    if (req.method === 'POST' && requestPath === '/api/jobs') {
       const { url, quality } = JSON.parse(await readBody(req) || '{}');
       if (!url || !validUrl(url)) return sendJson(res, 400, { error: 'Paste a valid http(s) video link.' });
       const job = startJob(url, quality || 'best');
       sendJson(res, 200, { jobId: job.id, status: job.status, queuePosition: job.status === 'queued' ? queuePositionOf(job) : 0 });
       return;
     }
-    if (req.method === 'GET' && u.pathname.startsWith('/api/jobs/')) {
-      const parts = u.pathname.split('/').filter(Boolean); // api, jobs, id, [file]
+    if (req.method === 'GET' && requestPath.startsWith('/api/jobs/')) {
+      const parts = requestPath.split('/').filter(Boolean); // api, jobs, id, [file]
       const job = jobs.get(parts[2]);
       if (!job) return sendJson(res, 404, { error: 'Job not found or expired. Start a new download.' });
       if (parts[3] === 'file') {
@@ -1151,8 +1195,8 @@ const server = http.createServer(async (req, res) => {
       return;
     }
     // Cancel a download: stop the running yt-dlp/ffmpeg and delete its files.
-    if (req.method === 'DELETE' && u.pathname.startsWith('/api/jobs/')) {
-      const parts = u.pathname.split('/').filter(Boolean);
+    if (req.method === 'DELETE' && requestPath.startsWith('/api/jobs/')) {
+      const parts = requestPath.split('/').filter(Boolean);
       const job = jobs.get(parts[2]);
       if (!job) return sendJson(res, 404, { error: 'Job not found or expired.' });
       job.status = 'cancelled';
@@ -1165,7 +1209,7 @@ const server = http.createServer(async (req, res) => {
       return;
     }
     // Direct download (local / VPS use; may hit Hostinger's 120s limit on big files — prefer /api/jobs)
-    if (req.method === 'GET' && u.pathname === '/api/download') {
+    if (req.method === 'GET' && requestPath === '/api/download') {
       const url = u.searchParams.get('url') || '';
       const quality = u.searchParams.get('quality') || 'best';
       if (!validUrl(url)) return sendJson(res, 400, { error: 'Paste a valid http(s) video link.' });
@@ -1181,7 +1225,7 @@ const server = http.createServer(async (req, res) => {
     }
     // Video cover through our server: some thumbnail CDNs are blocked
     // in the user's country, so the browser loads the cover from here.
-    if (req.method === 'GET' && u.pathname === '/api/thumb') {
+    if (req.method === 'GET' && requestPath === '/api/thumb') {
       const thumbUrl = u.searchParams.get('url') || '';
       const page = u.searchParams.get('page') || '';
       let host = '';
